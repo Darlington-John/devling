@@ -20,19 +20,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			.filter((a) => a?.topic?.slug && a?.slug)
 			.map((article) => ({
 				// @ts-expect-error: it's defined
-				url: `https://blog.wefithost.com/topics/${article.topic.slug}/${article.slug}`,
+				url: `https://devling.vercel.app/topics/${article.topic.slug}/${article.slug}`,
 				// @ts-expect-error: it's defined
 				lastModified: new Date(article.updatedAt),
 			})) ?? [];
 
 	const topicUrls = uniqueTopics.map((slug) => ({
-		url: `https://blog.wefithost.com/topics/${slug}`,
+		url: `https://devling.vercel.app/topics/${slug}`,
 		lastModified: new Date(),
 	}));
 
 	return [
 		{
-			url: 'https://blog.wefithost.com',
+			url: 'https://devling.vercel.app',
 			lastModified: new Date(),
 		},
 		...articleUrls,

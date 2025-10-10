@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		};
 	}
 
-	const url = `https://blog.wefithost.com/topics/${topicParam?.topic}`;
+	const url = `https://devling.vercel.app/topics/${topicParam?.topic}`;
 
 	return {
 		title: `Articles on ${topic.title}`,
@@ -56,7 +56,7 @@ export default async function TopicPage({ params }: Props) {
 
 	if (!topic) return <Topic />;
 
-	const url = `https://blog.wefithost.com/topics/${topicParam?.topic}`;
+	const url = `https://devling.vercel.app/topics/${topicParam?.topic}`;
 
 	// ✅ Build JSON-LD for Google
 	const jsonLd = {
@@ -68,12 +68,12 @@ export default async function TopicPage({ params }: Props) {
 		isPartOf: {
 			'@type': 'Blog',
 			name: 'WeFitHost Blog',
-			url: 'https://blog.wefithost.com',
+			url: 'https://devling.vercel.app',
 		},
 		mainEntity: topic.articles?.map((post) => ({
 			'@type': 'BlogPosting',
 			headline: post.title,
-			url: `https://blog.wefithost.com/topics/${topicParam?.topic}/${post.slug}`,
+			url: `https://devling.vercel.app/topics/${topicParam?.topic}/${post.slug}`,
 			//@ts-expect-error: type date
 			datePublished: post.createdAt,
 			//@ts-expect-error: type date

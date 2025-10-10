@@ -64,7 +64,7 @@ export default function Home() {
 						'@type': 'Blog',
 						mainEntityOfPage: {
 							'@type': 'WebPage',
-							'@id': 'https://blog.wefithost.com/',
+							'@id': 'https://devling.vercel.app/',
 						},
 						headline: 'Devling Blog',
 						description:
@@ -82,14 +82,14 @@ export default function Home() {
 								'@type': 'BlogPosting',
 								headline:
 									'Tips for Building Rich SEO: A Complete Guide to Ranking Higher',
-								url: 'https://blog.wefithost.com/topics/tips/tips-for-building-rich-seo-a-complete-guide-to-ranking-higher',
+								url: 'https://devling.vercel.app/topics/tips/tips-for-building-rich-seo-a-complete-guide-to-ranking-higher',
 								image:
 									'https://res.cloudinary.com/dl6pa30kz/image/upload/v1756679177/wefithost_articles/ppiffswph6wdzxcwy3vj.png',
 							},
 							{
 								'@type': 'BlogPosting',
 								headline: 'Shared Hosting vs. VPS: Which Is More Secure?',
-								url: 'https://blog.wefithost.com/topics/security/shared-hosting-vs-vps-which-is-more-secure',
+								url: 'https://devling.vercel.app/topics/security/shared-hosting-vs-vps-which-is-more-secure',
 								image:
 									'https://res.cloudinary.com/dl6pa30kz/image/upload/v1756301403/wefithost_articles/wtk4aecukpc8vtfvfprg.jpg',
 							},
@@ -97,7 +97,7 @@ export default function Home() {
 							{
 								'@type': 'BlogPosting',
 								headline: 'Dedicated Hosting Explained: Is It Worth the Cost?',
-								url: 'https://blog.wefithost.com/topics/hosting/dedicated-hosting-explained-is-it-worth-the-cost',
+								url: 'https://devling.vercel.app/topics/hosting/dedicated-hosting-explained-is-it-worth-the-cost',
 								image:
 									'https://res.cloudinary.com/dl6pa30kz/image/upload/v1756679001/wefithost_articles/q0bpniyi6fnystzjvgvn.png',
 							},
@@ -106,7 +106,7 @@ export default function Home() {
 								'@type': 'BlogPosting',
 								headline:
 									'Low Prices ≠ Great Value: Why Investing in Real Hosting Value Matters',
-								url: 'https://blog.wefithost.com/topics/news/low-prices-great-value-why-investing-in-real-hosting-value-matters',
+								url: 'https://devling.vercel.app/topics/news/low-prices-great-value-why-investing-in-real-hosting-value-matters',
 								image:
 									'https://res.cloudinary.com/dl6pa30kz/image/upload/v1757333151/wefithost_articles/low-prices-great-value-why-investing-in-real-hosting-value-matters.jpg',
 							},

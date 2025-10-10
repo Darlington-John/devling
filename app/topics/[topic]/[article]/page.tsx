@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		};
 	}
 
-	const url = `https://blog.wefithost.com/topics/${articleParam?.topic}/${articleParam?.article}`;
+	const url = `https://devling.vercel.app/topics/${articleParam?.topic}/${articleParam?.article}`;
 
 	return {
 		title: article.title,
@@ -58,7 +58,7 @@ export default async function ArticlePage({ params }: Props) {
 
 	if (!article) return <Article />;
 
-	const url = `https://blog.wefithost.com/topics/${articleParam?.topic}/${articleParam?.article}`;
+	const url = `https://devling.vercel.app/topics/${articleParam?.topic}/${articleParam?.article}`;
 
 	const jsonLd = {
 		'@context': 'https://schema.org',

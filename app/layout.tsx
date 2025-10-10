@@ -30,7 +30,7 @@ const PoppinsBold = localFont({
 export const metadata: Metadata = {
 	title: 'Devling Blog – A fun mix of food, travel, tech, and movies',
 	alternates: {
-		canonical: 'https://blog.wefithost.com/',
+		canonical: 'https://devling.vercel.app/',
 	},
 	description:
 		'WeFitHost Blog shares tips, updates, and insights on hosting, site management, and digital tools to help you build smarter, faster, and safer online.',
@@ -74,16 +74,17 @@ export default function RootLayout({
 					name="google-site-verification"
 					content="KOKNMGeWap4j_ppWm9uSPp6Hk7OSv-BWkSkHkW4_rWU"
 				/>
+				<script></script>
 				<Script
 					async
-					src="https://www.googletagmanager.com/gtag/js?id=G-0TTFKMFS01"
+					src="https://www.googletagmanager.com/gtag/js?id=G-CSTLY9HZDZ"
 				></Script>
 				<Script id="google-analytics">
-					{` window.dataLayer = window.dataLayer || [];
+					{`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-0TTFKMFS01');`}
+  gtag('config', 'G-CSTLY9HZDZ');`}
 				</Script>
 			</head>
 			<body
