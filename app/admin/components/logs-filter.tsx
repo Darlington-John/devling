@@ -14,39 +14,34 @@ const statusOptions = [
 		key: 'all',
 		label: 'All',
 		icon: <MdOutlineChecklist />,
-		activeColor: 'bg-gray-50',
 	},
 	{
 		key: 'create',
 		label: 'Create',
 		icon: (
-			<FaCircle className="text-green-100 border border-green-200 rounded-full" />
+			<FaCircle className="text-green-100 border border-green-300 rounded-full" />
 		),
-		activeColor: 'bg-green-50',
 	},
 	{
 		key: 'edit',
 		label: 'Edit',
 		icon: (
-			<FaCircle className="text-yellow-100 border border-yellow-200 rounded-full" />
+			<FaCircle className="text-yellow-100 border border-yellow-300 rounded-full" />
 		),
-		activeColor: 'bg-yellow-50',
 	},
 	{
 		key: 'delete',
 		label: 'Delete',
 		icon: (
-			<FaCircle className="text-red-100 border border-red-200 rounded-full" />
+			<FaCircle className="text-red-100 border border-red-300 rounded-full" />
 		),
-		activeColor: 'bg-red-50',
 	},
 	{
 		key: 'info',
 		label: 'Info',
 		icon: (
-			<FaCircle className="text-blue-100 border border-blue-200 rounded-full" />
+			<FaCircle className="text-blue-100 border border-blue-300 rounded-full" />
 		),
-		activeColor: 'bg-blue-50',
 	},
 ];
 
@@ -54,26 +49,18 @@ const roleOptions = [
 	{
 		key: 'all',
 		label: 'All',
-		text: 'text-black',
-		activeColor: 'bg-gray-50',
 	},
 	{
 		key: 'super_admin',
 		label: 'Super admin',
-		text: ' text-[#783A71]',
-		activeColor: 'bg-[hsl(307,35%,92%)]',
 	},
 	{
 		key: 'admin',
 		label: 'Admin',
-		text: ' text-[#a37a00]',
-		activeColor: 'bg-[hsl(45,100%,92%)]',
 	},
 	{
 		key: 'member',
 		label: 'Member',
-		text: ' text-[#2563EB]',
-		activeColor: 'bg-[hsl(221,83%,92%)]',
 	},
 ];
 
@@ -132,7 +119,7 @@ const LogsFilter = ({
 	return (
 		<div className="flex items-center gap-2 w-full justify-end">
 			<div
-				className="py-2 px-2 bg-white border border-gray-300 text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer"
+				className="py-2 px-2 bg-grey  text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer text-silver"
 				onClick={toggleStatusPrompt}
 			>
 				<span className="capitalize">Status: {activeStatus}</span>{' '}
@@ -141,16 +128,16 @@ const LogsFilter = ({
 				/>
 				{statusPrompt && (
 					<div
-						className={`flex flex-col bg-white shadow-lg w-[150px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20 ${
+						className={`flex flex-col bg-navy shadow-lg w-[150px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey  z-20 ${
 							statusPromptVisible ? 'opacity-100' : 'opacity-0'
 						}`}
 						ref={statusPromptRef}
 					>
-						{statusOptions.map(({ key, label, icon, activeColor }) => (
+						{statusOptions.map(({ key, label, icon }) => (
 							<button
 								key={key}
 								className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150 ${
-									activeStatus === key ? activeColor : 'hover:bg-gray-50'
+									activeStatus === key ?'bg-deepBlue' : 'hover:bg-grey'
 								}`}
 								onClick={() => {
 									toggleStatusPrompt();
@@ -166,7 +153,7 @@ const LogsFilter = ({
 			</div>
 
 			<div
-				className="py-2 px-2 bg-white border border-gray-300 text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer "
+				className="py-2 px-2 bg-grey radial  text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer text-silver"
 				onClick={toggleRolePrompt}
 			>
 				<span className="capitalize">Role: {activeRole}</span>{' '}
@@ -175,16 +162,16 @@ const LogsFilter = ({
 				/>
 				{rolePrompt && (
 					<div
-						className={`flex flex-col bg-white shadow-lg w-[130px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20 ${
+						className={`flex flex-col bg-navy radial shadow-lg w-[130px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey z-20 ${
 							rolePromptVisible ? 'opacity-100' : 'opacity-0'
 						}`}
 						ref={rolePromptRef}
 					>
-						{roleOptions.map(({ key, label, text, activeColor }) => (
+						{roleOptions.map(({ key, label}) => (
 							<button
 								key={key}
-								className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150 ${text} ${
-									activeRole === key ? activeColor : 'hover:bg-gray-50'
+								className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150  text-silver ${
+									activeRole === key ? 'bg-deepBlue' : 'hover:bg-grey'
 								}`}
 								onClick={() => {
 									toggleRolePrompt();
@@ -199,7 +186,7 @@ const LogsFilter = ({
 			</div>
 
 			<div
-				className="py-2 px-2 bg-white border border-gray-300 text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer "
+				className="py-2 px-2 bg-grey  text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer text-silver "
 				onClick={toggleActionPrompt}
 			>
 				<span className="capitalize">Action: {activeAction}</span>{' '}
@@ -208,7 +195,7 @@ const LogsFilter = ({
 				/>
 				{actionPrompt && (
 					<div
-						className={`grid grid-cols-2  bg-white shadow-lg w-[300px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20 ${
+						className={`grid grid-cols-2  bg-navy radial shadow-lg w-[300px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey z-20 ${
 							actionPromptVisible ? 'opacity-100' : 'opacity-0'
 						}`}
 						ref={actionPromptRef}
@@ -217,7 +204,7 @@ const LogsFilter = ({
 							<button
 								key={key}
 								className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150  ${
-									activeAction === key ? 'bg-gray-100' : 'hover:bg-gray-50'
+									activeAction === key ? 'bg-deepBlue' : 'hover:bg-grey'
 								}`}
 								onClick={() => {
 									toggleActionPrompt();

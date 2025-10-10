@@ -2,127 +2,95 @@
 import Link from 'next/link';
 
 import { usePathname } from 'next/navigation';
-import { Accordion } from '../accordion';
 import logo from '~/public/icons/logo.svg';
-import { FaFacebook, FaInstagram, FaSlack, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Image from 'next/image';
-
+import { useState } from 'react';
+import { apiRequest } from '~/utils/api-request';
+import { toast } from 'react-toastify';
+import ClassicInput from '../inputs/classic-input';
+import AsyncButton from '../buttons/async-button';
 const Footer = () => {
 	const mediaLink = [
 		{
-			icon: <FaFacebook />,
-			href: 'https://www.facebook.com/share/15kgJ8pdVq/?mibextid=wwXIfr',
+			icon: <FaGithub />,
+			href: 'https://github.com/Darlington-John',
 			id: 1,
 		},
 		{
-			icon: <FaInstagram />,
-			href: 'https://www.instagram.com/wefithost_official/',
+			icon: <FaLinkedin />,
+			href: 'https://www.linkedin.com/in/darlington-john/',
 			id: 2,
 		},
 		{
-			icon: <FaYoutube />,
-			href: 'https://www.youtube.com/channel/UCs-G2Y6VH16oYk-aan1EX8A',
+			icon: <FaInstagram />,
+			href: 'https://www.instagram.com/jxtdarlington/',
 			id: 3,
 		},
+
 		{
-			icon: <FaSlack />,
-			href: 'http://wefithost.slack.com',
+			icon: <FaFacebook />,
+			href: 'https://web.facebook.com/darlington.onuoha.165/',
 			id: 4,
 		},
 	];
-	const footerLink = [
-		{
-			header: 'Services',
-			link: [
-				{
-					dir: 'Web hosting ',
-					href: 'https://wefithost.com/web',
-				},
-				{
-					dir: 'Domain transfer',
-					href: 'https://wefithost.com/domain-transfer',
-				},
-				{
-					dir: 'Cloud hosting',
-					href: 'https://wefithost.com/cloud-hosting',
-				},
-				{
-					dir: 'Professional email',
-					href: 'https://wefithost.com/email',
-				},
-				{
-					dir: 'SSL certificates',
-					href: 'https://wefithost.com/ssl-certificate',
-				},
-				{
-					dir: 'Wordpress Hosting',
-					href: 'https://wefithost.com/wordpress-hosting',
-				},
-			],
-		},
-		{
-			header: 'Support',
-			link: [
-				{
-					dir: 'contact us',
-					href: 'https://wefithost.com/contact-us',
-				},
-				{
-					dir: 'agency',
-					href: 'https://wefithost.com/agency',
-				},
-				// {
-				// 	dir: 'system status',
-				// 	href: '/',
-				// },
-				{
-					dir: 'free migration',
-					href: 'https://wefithost.com/free-migration',
-				},
 
-				{
-					dir: 'Digital marketing',
-					href: 'https://wefithost.com/digital-marketing',
-				},
-			],
-		},
-		{
-			header: 'Company',
-			link: [
-				{
-					dir: 'About us',
-					href: 'https://wefithost.com/about',
-				},
-				{
-					dir: 'Customer reviews',
-					href: 'https://wefithost.com/reviews',
-				},
-				{
-					dir: 'Careers',
-					href: 'https://wefithost.com/careers',
-				},
-				// {
-				// 	dir: 'Affiliates',
-				// 	href: '/',
-				// },
-			],
-		},
-	];
 	const linkname = usePathname();
+	const [email, setEmail] = useState('');
+	const [subscribing, setSubscribing] = useState(false);
+	const [error, setError] = useState('');
+	const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+	const isValidEmail = (email: string): boolean => {
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		return emailRegex.test(email);
+	};
+
+	const subscribe = async () => {
+		if (subscribing) {
+			return;
+		}
+		if (email.trim() === '') {
+			setError('Email required');
+			return;
+		}
+		if (!isValidEmail(email.trim().toLowerCase())) {
+			setError('Please enter a valid email address');
+			return;
+		}
+		setSubscribing(true);
+		setError('');
+		await apiRequest({
+			url: '/api/subscribe',
+			method: 'POST',
+			body: { email },
+			onSuccess: (res) => {
+				toast.success(res.message);
+				setSubscribeSuccess(true);
+				setTimeout(() => setSubscribeSuccess(true), 3000);
+			},
+			onError: (error) => {
+				setError(error);
+			},
+			onFinally: () => {
+				setSubscribing(false);
+			},
+		});
+	};
 	return (
 		<footer
-			className={`bg-deepPurple flex flex-col w-full  text-darkGrey ${
+			className={` cta-section border-t-2 border-dotted border-t-grey flex flex-col w-full  text-darkGrey ${
 				linkname.startsWith('/admin') && 'hidden'
 			}`}
 		>
-			<div className="flex item   max-3xl:px-10 max-xs:px-5 max-lg:flex-col max-sm:px-5 justify-between max-w-[1500px] mx-auto w-full">
+			<div className="flex item   max-3xl:px-10 max-xs:px-5 max-lg:flex-col max-sm:px-5 justify-between items-center max-w-[1500px] mx-auto w-full">
 				<div className=" py-12   text-white shrink-0 flex flex-col max-xl:px-3 max-lg:border-none   max-sm:px-0">
 					<div className=" flex flex-col gap-6 max-w-[500px]">
 						<div className="flex  flex-col gap-3">
 							<Image src={logo} className="invert" alt="wefithost logo" />
-							<p className="text-lg ">
-								Reliable web hosting, domains, cloud solutions, and professional
-								email services for businesses of all sizes.
+							<p className="text-lg text-silver">
+								A fun mix of food, travel, tech, and movies — I share stories,
+								tips, and discoveries that make everyday life a little more
+								exciting.
 							</p>
 						</div>
 						<div className="flex  items-center gap-4">
@@ -138,54 +106,45 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<div className=" grid grid-cols-3   w-[800px]   py-12 max-lg:hidden">
-					{footerLink.map((data) => (
-						<div className="flex   gap-4  flex-col " key={data.header}>
-							<h4 className=" text-[18px] font-semibold text-white">
-								{data.header}
-							</h4>
-							<div className="flex gap-2 flex-col text-[20px] font-semibold items-start">
-								{data.link.map((li) => (
-									<Link
-										href={li.href}
-										className="      text-white text-base font-light capitalize link-style"
-										key={li.dir}
-									>
-										{li.dir}
-									</Link>
-								))}
+
+				<section className="relative h-[400px] p-10 overflow-hidden max-2xs:p-5  ">
+					<div className="flex gap-10 w-full flex-col relative items-center justify-center max-w-[1400px] h-full mx-auto z-[30]">
+						<div className=" flex items-center w-full">
+							<div className="flex flex-col gap-3 relative z-30 self-end w-full">
+								<h2 className="text-[32px] max-lg:text-xl text-fade-blue poppins-bold">
+									Subscribe to my newsletter
+								</h2>
+								<p className="max-w-[600px] text-silver text-base font-semibold max-lg:text-sm max-sm:font-normal">
+									Love what you read? Subscribe to our newsletter and get fresh
+									stories on food, travel, tech, and movies straight to your
+									inbox!
+								</p>
 							</div>
 						</div>
-					))}
-				</div>
-				<Accordion links={footerLink} />
+						<div className="flex gap-2  w-full items-end justify-start relative">
+							<ClassicInput
+								value={email}
+								setValue={setEmail}
+								error={error}
+								setError={setError}
+								classname_override="  !self-start max-xs:!w-full "
+								errorContent={'Please enter a valid email address'}
+								placeholder="Your email"
+								aria-label="Email address for newsletter subscription"
+							/>
+							<AsyncButton
+								action="Subscribe"
+								classname_override="!w-[200px]"
+								loading={subscribing}
+								success={subscribeSuccess}
+								onClick={subscribe}
+							/>
+						</div>
+					</div>
+				</section>
 			</div>
 			<div className="flex   w-full py-10  px-20 items-center justify-between text-[10px]  text-dimGrey  capitalize max-sm:px-5 flex-wrap max-w-[1500px] mx-auto gap-5 ">
-				<div className="flex gap-3 items-center  text-white">
-					<span className=" text-sm font-light">
-						© {new Date().getFullYear()} Wefithost. All rights reserved
-					</span>
-				</div>
-				<div className="flex gap-4 items-center  text-white">
-					<Link
-						href={'https://wefithost.com/privacy-policy'}
-						className=" text-sm font-light link-style"
-					>
-						Privacy policy
-					</Link>
-					<Link
-						href={'https://wefithost.com/terms'}
-						className=" text-sm font-light link-style"
-					>
-						Terms of service
-					</Link>
-					<Link
-						href={'https://wefithost.com/acceptable-policy'}
-						className=" text-sm font-light link-style"
-					>
-						Acceptable Use
-					</Link>
-				</div>
+				<div className="flex gap-3 items-center  text-white"></div>
 			</div>
 		</footer>
 	);

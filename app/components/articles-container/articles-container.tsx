@@ -51,7 +51,7 @@ const ArticlesContainer = ({
 
 	return (
 		<section
-			className="flex w-full flex-col gap-8 max-2xl:gap-4 bg-white"
+			className="flex w-full flex-col gap-8 max-2xl:gap-4 bg-dark-navy"
 			id="articles-section"
 			style={{ scrollMarginTop: '200px' }}
 		>

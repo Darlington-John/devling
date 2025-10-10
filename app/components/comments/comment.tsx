@@ -25,12 +25,12 @@ export const CommentCard = ({ comment }: CardProps) => {
 					className="w-9 h-9 object-cover rounded-full max-sm:w-6 max-sm:h-6 relative z-10 overflow-hidden shrink-0"
 					alt="profile"
 				/>
-				<div className="absolute w-[1px] bg-gray-300  top-0 h-full"></div>
+				<div className="absolute w-[1px] bg-grey  top-0 h-full"></div>
 			</div>
 
 			<div className=" flex flex-col gap-1 w-full">
 				<div className="flex  items-center  gap-1  ">
-					<h4 className="text-base   font-semibold  max-md:text-sm ">
+					<h4 className="text-base   font-semibold  max-md:text-sm text-white">
 						{comment?.comment_by?.guest
 							? 'Reader'
 							: `${comment.comment_by.first_name} ${
@@ -39,12 +39,12 @@ export const CommentCard = ({ comment }: CardProps) => {
 					</h4>
 
 					<FaCircle className="text-gray-600   " size={4} />
-					<span className="text-sm max-md:text-xs">
+					<span className="text-sm max-md:text-xs text-silver">
 						{formatRelativeTime(comment.createdAt as string)}
 					</span>
 				</div>
 
-				<p className="max-md:text-sm">{comment?.comment}</p>
+				<p className="max-md:text-sm text-silver">{comment?.comment}</p>
 				<ReplyComment comment={comment} />
 				{comment?.replies?.length > 0 && (
 					<div className="flex flex-col w-full relative">

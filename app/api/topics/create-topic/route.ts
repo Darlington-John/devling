@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
 			(resolve, reject) => {
 				const uploadStream = cloudinary.v2.uploader.upload_stream(
 					{
-						folder: 'wefithost_articles',
+						folder: 'devling_articles',
 						transformation: [
 							{ quality: 'auto', fetch_format: 'auto' }, // auto compress + best format
 						],

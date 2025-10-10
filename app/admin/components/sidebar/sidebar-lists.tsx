@@ -15,21 +15,22 @@ const SidebarList = ({ href, icon, activeIcon, dir }: ListProps) => {
 		<div className="relative flex  items-center">
 			<Link
 				href={`${href}`}
-				className={`  h-[55px] pl-4 pr-5  text-[22px]  flex items-center  gap-2  w-full max-xl:text-xl relative hover:bg-purple-50      ${
+				className={`  h-[55px] pl-4 pr-5  text-[22px]  flex items-center  gap-2  w-full max-xl:text-xl relative      ${
 					linkname.startsWith(`${href}`)
-						? ' bg-purple-50  text-purple'
-						: ' text-gray-600'
+						? ' bg-deepBlue  text-white'
+						: ' text-silver hover:bg-grey '
 				}`}
 			>
 				{linkname.startsWith(`${href}`) ? activeIcon : icon}
 				<span className="line-clamp-1 neue   text-lg   ">{dir}</span>
 			</Link>
 			{linkname.startsWith(`${href}`) && (
-				<div className="absolute right-0 bg-softGreen h-full p-1"></div>
+				<div className="absolute right-0 bg-blue h-full p-1"></div>
 			)}
 		</div>
 	);
 };
 
 export default SidebarList;
+
 

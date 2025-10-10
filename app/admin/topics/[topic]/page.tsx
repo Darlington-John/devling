@@ -60,13 +60,13 @@ const Articles = () => {
 	}, [searchTerm]);
 
 	return (
-		<main className="px-4 py-6 bg-white min-h-screen flex flex-col gap-8 ">
+		<main className="px-4 py-6 bg-dark-navy min-h-screen flex flex-col gap-8 ">
 			<div className="flex items-start justify-between w-full">
 				<div className="flex flex-col gap-3">
-					<h1 className="max-xs:text-2xl capitalize  text-3xl font-semibold">
+					<h1 className="max-xs:text-2xl capitalize  text-3xl font-semibold text-fade-blue">
 						All Articles in {pagedArticles?.title}
 					</h1>
-					<p className="text-base max-w-[600px]">
+					<p className="text-base max-w-[600px] text-silver">
 						Manage all your articles in one place—edit, publish, or delete with
 						ease to keep your content fresh and organized.
 					</p>

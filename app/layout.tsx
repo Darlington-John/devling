@@ -28,7 +28,7 @@ const PoppinsBold = localFont({
 	variable: '--font-poppinsextra',
 });
 export const metadata: Metadata = {
-	title: 'WefitHost Blog – Smarter, Faster, and Safer Hosting Guides',
+	title: 'Devling Blog – A fun mix of food, travel, tech, and movies',
 	alternates: {
 		canonical: 'https://blog.wefithost.com/',
 	},
@@ -87,7 +87,7 @@ export default function RootLayout({
 				</Script>
 			</head>
 			<body
-				className={`${PoppinsReg.variable}  ${PoppinsBold.variable}  ${QuicksandReg.variable} antialiased  flex flex-col mx-auto`}
+				className={`${PoppinsReg.variable}  ${PoppinsBold.variable}  ${QuicksandReg.variable} antialiased  flex flex-col mx-auto bg-dark-navy`}
 				id="body"
 			>
 				<NextAuthProvider>

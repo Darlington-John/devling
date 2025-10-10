@@ -51,7 +51,7 @@ const Signup = ({
 					setError={setError}
 					errorContent={errorContent}
 					error={error}
-					classname_override="!bg-lightGrey"
+					
 					label="first name*"
 					inputType="text"
 					name="firstName"
@@ -64,7 +64,7 @@ const Signup = ({
 					errorContent={errorContent}
 					required={false}
 					error={error}
-					classname_override="!bg-lightGrey"
+					
 					label="last name (optional)"
 					inputType="text"
 					name="lastName"
@@ -76,7 +76,7 @@ const Signup = ({
 				setValue={setEmail}
 				setError={setError}
 				errorContent={errorContent}
-				classname_override="!bg-lightGrey"
+				
 				error={error}
 				label="email*"
 				inputType="email"
@@ -90,7 +90,7 @@ const Signup = ({
 				setValue={setPassword}
 				setError={setError}
 				errorContent={errorContent}
-				classname_override="!bg-lightGrey"
+				
 				error={error}
 				name="password"
 				inputType={passwordVisible ? 'text' : 'password'}
@@ -100,10 +100,10 @@ const Signup = ({
 			/>
 
 			<div className="flex flex-col gap-3 w-full  text-sm pt-5">
-				<h1 className="text-black">
+				<h1 className="text-silver">
 					Already have an account?{' '}
 					<button
-						className="text-purple"
+						className="text-blue"
 						onClick={() => {
 							setCurrentAction?.('log-in');
 							setError?.('');
@@ -119,7 +119,7 @@ const Signup = ({
 			<AsyncButton
 				onClick={() => submit('sign-up')}
 				success={success}
-				classname_override="hover:!bg-darkPurple duration-150"
+				classname_override="hover:!bg-darkBlue duration-150"
 				loading={loading}
 				disabled={!email || !password || !firstName}
 				action="Sign Up"

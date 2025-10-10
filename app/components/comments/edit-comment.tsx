@@ -72,13 +72,13 @@ const EditComment = ({
 		isActive && (
 			<div className="fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center        backdrop-brightness-50  px-8     xs:px-0">
 				<div
-					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy   items-center font-normal     ${
 						isVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={ref}
 				>
 					<div className="flex items-center flex-col gap-0 w-full leading-none">
-						<h1 className="text-2xl sf-bold text-center text-black">
+						<h1 className="text-2xl sf-bold text-center text-fade-blue">
 							Edit Comment
 						</h1>
 					</div>
@@ -88,7 +88,6 @@ const EditComment = ({
 						error={error}
 						setError={setError}
 						placeholder="comment"
-						classname_override="!bg-lightGrey"
 						autofocus={true}
 						name="comment"
 						errorContent="Comment is required"

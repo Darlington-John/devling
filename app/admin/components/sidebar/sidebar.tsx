@@ -16,27 +16,27 @@ const Sidebar = ({ hidden }: SidebarProps) => {
 			id: 1,
 			dir: 'Topics',
 			href: '/admin/topics',
-			icon: <MdArticle className="text-black" />,
-			activeIcon: <MdArticle className="text-purple" />,
+			icon: <MdArticle className="text-fade-blue" />,
+			activeIcon: <MdArticle className="text-blue" />,
 		},
 		{
 			id: 2,
 			dir: 'Members',
 			href: '/admin/members',
-			icon: <FaUsers className="text-black" />,
-			activeIcon: <FaUsers className="text-purple" />,
+			icon: <FaUsers className="text-fade-blue" />,
+			activeIcon: <FaUsers className="text-blue" />,
 		},
 		{
 			id: 3,
 			dir: 'Logs',
 			href: '/admin/logs',
-			icon: <LuLogs className="text-black" />,
-			activeIcon: <LuLogs className="text-purple" />,
+			icon: <LuLogs className="text-fade-blue" />,
+			activeIcon: <LuLogs className="text-blue" />,
 		},
 	];
 	return (
 		<section
-			className={`h-full w-[260px]  pt-3 pb-5 flex flex-col gap-10  items-start shrink-0   max-xl:pt-5 max-xl:px-2  bg-white max-lg:bg-transparent max-lg:w-full max-lg:px-0    max-lg:pt-3 ${
+			className={`h-full w-[260px]  pt-3 pb-5 flex flex-col gap-10  items-start shrink-0   max-xl:pt-5 max-xl:px-2  bg-dark-navy max-lg:bg-transparent max-lg:w-full max-lg:px-0    max-lg:pt-3 ${
 				hidden && 'max-lg:hidden'
 			}`}
 		>
@@ -49,27 +49,27 @@ const Sidebar = ({ hidden }: SidebarProps) => {
 						priority
 					/>
 				</Link>
-				<h1 className="text-xs text-grey neue  ">Admin Dashboard</h1>
+				<h1 className="text-xs text-silver neue  ">Admin Dashboard</h1>
 			</div>
-			<div className="flex flex-col  w-full  gap-3 bg-white">
-				<h1 className="text-grey text-xs pl-5 max-lg:hidden">MAIN MENU</h1>
+			<div className="flex flex-col  w-full  gap-3 bg-dark-navy">
+				<h1 className="text-silver text-xs pl-5 max-lg:hidden">MAIN MENU</h1>
 				<div className="h-full  w-full flex flex-col gap-1">
 					<Link
 						href={'/admin'}
-						className={`   py-3 px-5 text-[20px] neue  flex items-center  gap-3  w-full max-xl:text-xl text-grey relative duration-150      ${
+						className={`   py-3 px-5 text-[20px] neue  flex items-center  gap-3  w-full max-xl:text-xl text-silver relative duration-150      ${
 							linkname === '/admin'
-								? ' bg-purple-50  text-purple  '
-								: 'hover:bg-purple-50'
+								? ' bg-deepBlue  text-white  '
+								: 'hover:bg-grey'
 						}`}
 					>
 						{linkname === '/admin' ? (
-							<MdApps className="text-purple" />
+							<MdApps className="text-blue" />
 						) : (
-							<MdApps className="text-black" />
+							<MdApps className="text-fade-blue" />
 						)}
 
 						{linkname === '/admin' && (
-							<div className="absolute right-0 bg-purple h-full p-1"></div>
+							<div className="absolute right-0 bg-blue h-full p-1"></div>
 						)}
 						<span>Overview</span>
 					</Link>

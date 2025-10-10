@@ -37,7 +37,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 	}, [isOpen]);
 	return (
 		<div
-			className={` overflow-hidden   w-full flex flex-col    text-white  border-b  border-[#ffffffa7]   px-2 text-xs ${accordion_class_override}`}
+			className={` overflow-hidden   w-full flex flex-col    text-white  border-b  border-[#ffffffa7] border-dotted   px-2 text-xs ${accordion_class_override}`}
 		>
 			<button
 				className={`w-full  py-6   flex items-center justify-between  border-none pointer leading-none   flex-nowrap  max-md:py-5 `}

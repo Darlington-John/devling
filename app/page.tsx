@@ -1,6 +1,6 @@
 'use client';
 import ArticlesContainer from './components/articles-container/articles-container';
-import CtaSection from './components/cta';
+
 import { IArticle } from '~/types/article';
 import { useTopicsContext } from './context/topics-context';
 import RelatedTopicsSection from './components/related-topics';
@@ -66,9 +66,9 @@ export default function Home() {
 							'@type': 'WebPage',
 							'@id': 'https://blog.wefithost.com/',
 						},
-						headline: 'WefitHost Blog',
+						headline: 'Devling Blog',
 						description:
-							'WeFitHost Blog shares tips, updates, and insights on hosting, site management, and digital tools to help you build smarter, faster, and safer online.',
+							'Devling Blog shares tips, updates, and insights on hosting, site management, and digital tools to help you build smarter, faster, and safer online.',
 						publisher: {
 							'@type': 'Organization',
 							name: 'WefitHost',
@@ -118,12 +118,12 @@ export default function Home() {
 				<div className="min-h-screen w-full py-8 gap-16 flex flex-col  max-w-[1500px] max-2xl:py-6 max-2xl:gap-10 mx-auto   max-2xl:px-10 max-xs:px-5 max-4xl:px-10">
 					<FeaturedArticlesPreview />
 					<section className="flex flex-col gap-4 max-w-[1500px]  w-full">
-						<h1 className="text-4xl poppins-bold max-2xl:text-3xl max-xs:text-2xl ">
-							WeFitHost Blog – Hosting Tips and Web Insights
+						<h1 className="text-4xl poppins-bold max-2xl:text-3xl max-xs:text-2xl text-fade-blue ">
+							Devling Blog – Hosting Tips and Web Insights
 						</h1>
-						<h2 className="text-lg max-2xl:text-base max-w-[800px] max-2xs:text-sm">
-							WeFitHost Blog brings you the latest tips, updates, and insights
-							on web hosting, website management, and digital tools — helping
+						<h2 className="text-lg max-2xl:text-base max-w-[800px] max-2xs:text-sm text-silver">
+							Devling Blog brings you the latest tips, updates, and insights on
+							web hosting, website management, and digital tools — helping
 							individuals and businesses build faster, smarter, and more secure
 							online experiences
 						</h2>
@@ -155,7 +155,6 @@ export default function Home() {
 						</>
 					)}
 				</div>
-				<CtaSection />
 			</main>
 		</>
 	);

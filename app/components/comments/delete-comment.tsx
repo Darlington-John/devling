@@ -67,16 +67,16 @@ const DeleteComment = ({
 		isActive && (
 			<div className="fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center        backdrop-brightness-50  px-8     xs:px-0">
 				<div
-					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy    items-center font-normal     ${
 						isVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={ref}
 				>
 					<div className="flex items-center flex-col gap-0 w-full leading-none">
-						<h1 className="text-2xl sf-bold text-center text-black">
+						<h1 className="text-2xl sf-bold text-center text-fade-blue">
 							Delete Comment
 						</h1>
-						<p className="text-xs text-gray-600 text-center">
+						<p className="text-xs text-silver text-center">
 							You&apos;re about to delete this comment. All replies under it
 							will also be deleted. Are you sure you want to continue?
 						</p>
@@ -84,7 +84,7 @@ const DeleteComment = ({
 
 					<div className="gap-2 flex w-full">
 						<AsyncButton
-							classname_override="!h-[40px] !rounded-md !bg-red hover:!bg-red-700"
+							classname_override="!h-[40px] !rounded-md !bg-red hover:!bg-red-500"
 							action="Delete"
 							loading={loading}
 							success={successful}

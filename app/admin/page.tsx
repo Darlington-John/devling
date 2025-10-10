@@ -59,10 +59,10 @@ const Admin = () => {
 	}, [searchTerm]);
 
 	return (
-		<div className=" w-full  bg-white">
-			<div className="flex flex-col gap-12  items-start w-full px-4 ">
+		<div className=" w-full  bg-dark-navy">
+			<div className="flex flex-col gap-12 max-xs:gap-8  items-start w-full px-4 ">
 				<div>
-					<h1 className="  text-black  text-xl flex items-center gap-2 max-sm:text-xl">
+					<h1 className="  text-fade-blue  text-xl flex items-center gap-2 max-sm:text-xl pt-2">
 						<Image src={wave} alt="" className="w-5" />
 						<span>Welcome back, {user?.first_name}</span>
 					</h1>
@@ -74,10 +74,10 @@ const Admin = () => {
 				<div className="w-full flex flex-col gap-4 ">
 					<div className="flex items-start justify-between w-full flex-wrap gap-3">
 						<div className="flex flex-col gap-3">
-							<h1 className="max-xs:text-2xl capitalize  text-3xl font-semibold">
+							<h1 className="max-xs:text-2xl capitalize  text-3xl font-semibold text-fade-blue">
 								All Articles
 							</h1>
-							<p className="text-base max-w-[600px]">
+							<p className="text-base max-w-[600px] text-silver">
 								Manage all your articles in one place—edit, publish, or delete
 								with ease to keep your content fresh and organized.
 							</p>

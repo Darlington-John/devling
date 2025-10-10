@@ -114,7 +114,7 @@ const NewTopic = () => {
 		<>
 			{user?.role === 'super_admin' && (
 				<button
-					className="h-[40px] rounded-md px-4 bg-purple hover:bg-darkPurple duration-150 flex items-center justify-center text-white gap-2 text-center "
+					className="h-[40px] rounded-md px-4 bg-blue hover:bg-darkBlue duration-150 flex items-center justify-center text-white gap-2 text-center "
 					onClick={toggleNewTopicPrompt}
 				>
 					<span>
@@ -138,25 +138,25 @@ const NewTopic = () => {
 						/>
 					) : (
 						<div
-							className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+							className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy radial border border-grey   items-center font-normal     ${
 								newTopicPromptVisible ? '' : 'mid-popup-hidden'
 							}`}
 							ref={newTopicPromptRef}
 						>
 							<div className="flex items-center flex-col gap-0 w-full leading-none">
-								<h1 className="text-2xl sf-bold text-center text-black">
+								<h1 className="text-2xl sf-bold text-center text-fade-blue">
 									Create a new topic
 								</h1>
 							</div>
-							<div className="flex flex-col gap-0 items-center justify-center w-full">
+							<div className="flex flex-col gap-2 items-center justify-center w-full">
 								{imagePreview ? (
 									// eslint-disable-next-line
 									<img src={imagePreview} alt="icon" className="w-full   " />
 								) : (
-									<IoImageSharp className="text-9xl  text-gray-500 object-cover" />
+									<IoImageSharp className="text-9xl  text-silver object-cover" />
 								)}
 								<button
-									className=" text-black link-style-dark text-xs"
+									className=" text-white link-style text-xs"
 									onClick={handleClickSelect}
 								>
 									{imageUrl ? 'Choose another' : 'Select Image'}
@@ -168,7 +168,6 @@ const NewTopic = () => {
 								error={error}
 								setError={setError}
 								placeholder="hosting"
-								classname_override="!bg-lightGrey"
 								autofocus={true}
 								label="Title"
 								name="title"
@@ -179,7 +178,6 @@ const NewTopic = () => {
 								setValue={setDesc}
 								textarea
 								error={error}
-								classname_override="!bg-lightGrey !text-black !rounded-sm "
 								setError={setError}
 								placeholder="Everything hosting"
 								errorContent="Description is required"
@@ -188,7 +186,7 @@ const NewTopic = () => {
 								maxlength={160}
 							/>
 							{error && (
-								<h1 className="text-xs text-center text-red">{error}</h1>
+								<h1 className="text-xs text-center text-red-400">{error}</h1>
 							)}
 							<div className="gap-2 flex w-full">
 								<AsyncButton

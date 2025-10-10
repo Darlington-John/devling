@@ -20,10 +20,10 @@ export default function RootLayout({
 		}
 	}, [loading, user, router]);
 	return (
-		<main className="h-screen overflow-hidden  flex items-start  bg-white">
+		<main className="h-screen overflow-hidden  flex items-start  bg-dark-navy">
 			<Sidebar hidden />
 			<Overlay />
-			<section className="h-full overflow-auto  w-full bg-[#f1f1f4]    border-l-[2px] border-l-lightGrey">
+			<section className="h-full overflow-auto  w-full bg-dark-navy    border-l-[2px] border-l-grey border-dotted">
 				<Header />
 
 				{children}

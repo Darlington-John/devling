@@ -1,10 +1,9 @@
-import Image from 'next/image';
+
 import { FaEnvelope } from 'react-icons/fa';
 import ClassicInput from './inputs/classic-input';
 import { useState } from 'react';
 import { apiRequest } from '~/utils/api-request';
 import { toast } from 'react-toastify';
-import logo from '~/public/icons/logo-icon.png';
 import AsyncButton from './buttons/async-button';
 import { usePopup } from '~/utils/toggle-popups';
 import { FaXmark } from 'react-icons/fa6';
@@ -64,30 +63,15 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 	return (
 		<>
 			<aside
-				className={`flex-col max-xl:flex-row  items-start  gap-5 max-md:flex-col sticky top-20 ${className_override}`}
+				className={`flex-col max-xl:flex-row  items-start  gap-5 max-md:flex-col sticky top-28 ${className_override}`}
 			>
-				<div className="w-[450px] bg-white border-purple rounded-2xl  shrink-0 flex flex-col gap-4 items-center justify-between  shadow-sm p-4 max-xl:w-1/2 max-xl:static max-md:w-full max-xs:gap-2">
-					<Image src={logo} alt="wefithost logo" className="w-28 max-xs:w-18" />
-					<h3 className="text-lg poppins text-center">About our blog</h3>
-					<p className="text-center text-base text-gray-500">
-						Welcome to WeFitHost Insights, where we share expert knowledge and
-						strategies to help you succeed in the hosting world.
-					</p>
-					<button
-						onClick={toggleAboutPrompt}
-						className="bg-purple hover:bg-darkPurple text-white  h-[40px] px-2.5 duration-150 rounded-sm w-full text-center flex items-center justify-center text-sm font-semibold"
-					>
-						Learn about us
-					</button>
-				</div>
+				<div className="w-[450px] bg-navy radial border-grey border rounded-2xl  shrink-0 flex flex-col gap-4 items-center justify-between  shadow-lg p-4 max-xl:w-1/2 max-xl:static max-md:w-full max-xl:shadow-sm max-xs:gap-2">
+					<FaEnvelope className="text-4xl text-blue " />
 
-				<div className="w-[450px] bg-white border-purple rounded-2xl  shrink-0 flex flex-col gap-4 items-center justify-between  shadow-lg p-4 max-xl:w-1/2 max-xl:static max-md:w-full max-xl:shadow-sm max-xs:gap-2">
-					<FaEnvelope className="text-4xl text-purple " />
-
-					<h3 className="text-lg poppins text-center">
-						Subscribe to our newsletter
+					<h3 className="text-lg poppins text-center text-fade-blue">
+						Subscribe to my newsletter
 					</h3>
-					<p className="text-center">
+					<p className="text-center text-silver">
 						Get the latest hosting tips and business insights
 					</p>
 
@@ -97,7 +81,7 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 							setValue={setEmail}
 							error={error}
 							setError={setError}
-							classname_override="!bg-lightGrey !text-black !w-full !self-start"
+							classname_override="!w-full !self-start"
 							errorContent={'Please enter a valid email address'}
 							placeholder="Your email"
 						/>
@@ -111,8 +95,8 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 							onClick={subscribe}
 						/>
 					</div>
-					<span className="text-xs ">
-						We&apos;ll never share your email. Unsubscribe anytime.
+					<span className="text-xs text-silver">
+						I&apos;ll never share your email. Unsubscribe anytime.
 					</span>
 				</div>
 			</aside>
@@ -270,4 +254,5 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 };
 
 export default AboutBlog;
+
 

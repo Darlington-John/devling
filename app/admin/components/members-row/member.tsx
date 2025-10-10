@@ -54,8 +54,9 @@ const Member = ({ member }: memberProps) => {
 	return (
 		<>
 			<div
-				className="w-full flex gap-1 bg-white border-t    border-t-lightGrey hover:bg-gray-50"
+				className="w-full flex gap-1 bg-navy border-t    border-t-grey hover:bg-deepBlue cursor-pointer"
 				key={member._id}
+				onClick={togglePrompt}
 			>
 				<div className="w-[25%] h-[40px] flex items-center  px-3  gap-2">
 					{/* eslint-disable-next-line */}
@@ -64,11 +65,11 @@ const Member = ({ member }: memberProps) => {
 						className="w-7 h-7 object-cover rounded-full max-sm:w-6 max-sm:h-6"
 						alt=""
 					/>
-					<span className="text-sm  text-gray-700 max-sm:text-xs ">
+					<span className="text-sm  text-silver max-sm:text-xs ">
 						{member?.first_name} {member?.last_name}
 					</span>
 				</div>
-				<div className="w-[25%] h-[40px] flex items-center  px-3 text-sm">
+				<div className="w-[25%] h-[40px] flex items-center  px-3 text-sm text-silver">
 					{member?.email}
 				</div>
 				<div className="w-[15%] h-[40px]  px-3 text-sm flex items-center">
@@ -85,30 +86,27 @@ const Member = ({ member }: memberProps) => {
 						{member?.role}
 					</h1>
 				</div>
-				<div className="w-[15%] h-[40px] flex items-center  px-3 text-sm">
+				<div className="w-[15%] h-[40px] flex items-center  px-3 text-sm text-silver">
 					{getCountryNameFromCode(member?.country as string) || 'Unknown'}
 				</div>
-				<div className="w-[10%] h-[40px] flex items-center  px-3 text-sm">
+				<div className="w-[10%] h-[40px] flex items-center  px-3 text-sm text-silver">
 					{formatDate(member?.createdAt as string)}
 				</div>
-				<div className="w-[10%] h-[40px] flex items-center  px-3 text-sm text-end justify-end relative">
+				<div className="w-[10%] h-[40px] flex items-center  px-3 text-sm text-end justify-end relative text-silver">
 					{user?.role === 'super_admin' && (
-						<FaEllipsisH
-							className="text-gray-500 cursor-pointer "
-							onClick={togglePrompt}
-						/>
+						<FaEllipsisH className="text-gray-500 cursor-pointer " />
 					)}
 
 					{prompt && (
 						<div
-							className={`flex  flex-col bg-white shadow-lg  w-[180px] rounded-md   duration-150 absolute top-2 right-10  divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20   ${
+							className={`flex  flex-col bg-navy radial  shadow-lg  w-[180px] rounded-md   duration-150 absolute top-2 right-10  divide-y divide-grey overflow-hidden border border-grey z-20   ${
 								promptVisible ? 'opacity-100' : 'opacity-0 '
 							}`}
 							ref={promptRef}
 						>
 							{member?.role !== 'super_admin' && (
 								<button
-									className="py-2 w-full text-[13px]   flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+									className="py-2 w-full text-[13px]   flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 									onClick={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -123,7 +121,7 @@ const Member = ({ member }: memberProps) => {
 							)}
 
 							<button
-								className="py-2 w-full text-[13px]   flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+								className="py-2 w-full text-[13px]   flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 								onClick={(e) => {
 									e.preventDefault();
 									e.stopPropagation();
@@ -135,7 +133,7 @@ const Member = ({ member }: memberProps) => {
 							</button>
 							{member.role !== 'super_admin' && (
 								<button
-									className="py-2 w-full text-[13px]  text-red flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+									className="py-2 w-full text-[13px]  text-red-300 flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 									onClick={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -148,7 +146,7 @@ const Member = ({ member }: memberProps) => {
 							)}
 							{member.role !== 'super_admin' && member.role !== 'admin' && (
 								<button
-									className="py-2 w-full text-[13px]  text-red flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+									className="py-2 w-full text-[13px]  text-red-300 flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 									onClick={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -200,4 +198,8 @@ const Member = ({ member }: memberProps) => {
 };
 
 export default Member;
+
+
+
+
 

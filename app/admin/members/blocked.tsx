@@ -49,7 +49,7 @@ const BlockedSection = () => {
 	return (
 		<section className="flex flex-col gap-4  py-6 px-4 ">
 			<div className="flex items-center justify-between w-full max-2xs:flex-col max-2xs:gap-2 max-2xs:items-start ">
-				<h1 className="flex text-3xl neue-thin uppercase max-md:text-2xl  max-sm:text-xl">
+				<h1 className="flex text-3xl neue-thin uppercase max-md:text-2xl  max-sm:text-xl text-fade-blue">
 					Blocked ({totalBlocked})
 				</h1>
 			</div>
@@ -77,8 +77,8 @@ const BlockedSection = () => {
 							disabled={currentPage === 1}
 							className={`flex items-center justify-center h-7 w-7 rounded-md ${
 								currentPage === 1
-									? 'bg-white text-gray-700 opacity-40'
-									: 'bg-white text-black hover:bg-gray-200'
+									? 'bg-deepBlue text-silver opacity-40 !cursor-default'
+									: 'bg-deepBlue text-silver hover:bg-gray-200'
 							}`}
 						>
 							<MdKeyboardArrowLeft />
@@ -118,8 +118,8 @@ const BlockedSection = () => {
 										}}
 										className={`px-3 py-1 rounded-md  ${
 											page === currentPage
-												? 'bg-white text-black'
-												: ' text-gray-600 hover:text-black'
+												? 'bg-blue text-white'
+												: 'text-silver hover:bg-grey'
 										}`}
 									>
 										{page}
@@ -139,8 +139,8 @@ const BlockedSection = () => {
 							disabled={currentPage === totalPages}
 							className={`flex items-center justify-center h-7 w-7 rounded-md  ${
 								currentPage === totalPages
-									? 'bg-white text-gray-700 opacity-60'
-									: 'bg-white text-black hover:bg-gray-200'
+									? 'bg-deepBlue text-silver opacity-40 !cursor-default'
+									: 'bg-deepBlue text-silver hover:bg-gray-200'
 							}`}
 						>
 							<MdKeyboardArrowRight />
@@ -153,4 +153,7 @@ const BlockedSection = () => {
 };
 
 export default BlockedSection;
+
+
+
 

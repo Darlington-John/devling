@@ -19,14 +19,15 @@ const EmptyState = ({
 			className={`${container_override} w-full min-h-[50vh] flex items-center justify-center`}
 		>
 			<div
-				className={`flex flex-col gap-2 items-center w-[400px] rounded-2xl bg-lightGrey ${override} p-5 h-[300px] justify-center`}
+				className={`flex flex-col gap-2 items-center w-[400px] rounded-2xl bg-navy radial  border-grey border  ${override} p-5 h-[300px] justify-center`}
 			>
-				<Icon className="text-3xl" /> {/* 👈 dynamically render */}
-				<p>{message}</p>
+				<Icon className="text-3xl text-fade-blue" /> {/* 👈 dynamically render */}
+				<p className='text-silver'>{message}</p>
 			</div>
 		</section>
 	);
 };
 
 export default EmptyState;
+
 

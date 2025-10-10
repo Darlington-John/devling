@@ -141,25 +141,25 @@ const EditArticlePrompt = ({
 					/>
 				) : (
 					<div
-						className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+						className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy radial border border-grey   items-center font-normal ${
 							isVisible ? '' : 'mid-popup-hidden'
 						}`}
 						ref={ref}
 					>
 						<div className="flex items-center flex-col gap-0 w-full leading-none">
-							<h3 className="text-2xl sf-bold text-center text-black">
+							<h3 className="text-2xl sf-bold text-center text-fade-blue">
 								Edit article
 							</h3>
 						</div>
-						<div className="flex flex-col gap-0 items-center justify-center w-full">
+						<div className="flex flex-col gap-2 items-center justify-center w-full">
 							{imagePreview ? (
 								// eslint-disable-next-line
 								<img src={imagePreview} alt="icon" className="w-full   " />
 							) : (
-								<IoImageSharp className="text-9xl  text-gray-500 object-cover" />
+								<IoImageSharp className="text-9xl  text-silver  object-cover" />
 							)}
 							<button
-								className=" text-black link-style-dark text-xs"
+								className=" text-white link-style text-xs"
 								onClick={handleClickSelect}
 							>
 								{imageUrl ? 'Choose another' : 'Select Image'}
@@ -171,7 +171,6 @@ const EditArticlePrompt = ({
 							error={error}
 							setError={setError}
 							placeholder="hosting"
-							classname_override="!bg-lightGrey"
 							autofocus={true}
 							label="Title"
 							name="title"
@@ -182,14 +181,13 @@ const EditArticlePrompt = ({
 							setValue={setDesc}
 							textarea
 							error={error}
-							classname_override="!bg-lightGrey !text-black !rounded-sm "
 							setError={setError}
 							placeholder="Everything hosting"
 							errorContent="Description is required"
 							name="desc"
 						/>
 						{error && (
-							<span className="text-xs text-center text-red">{error}</span>
+							<span className="text-xs text-center text-red-300">{error}</span>
 						)}
 						<div className="gap-2 flex w-full">
 							<AsyncButton

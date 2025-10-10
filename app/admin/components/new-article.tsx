@@ -126,7 +126,7 @@ const NewArticle = () => {
 	return (
 		<>
 			<button
-				className="h-[40px] rounded-md px-4 bg-purple hover:bg-darkPurple duration-150 flex items-center justify-center text-white gap-2 text-center "
+				className="h-[40px] rounded-md px-4 bg-blue hover:bg-darkBlue duration-150 flex items-center justify-center text-white gap-2 text-center "
 				onClick={toggleNewArticlePrompt}
 			>
 				<span className="text-base">
@@ -150,25 +150,25 @@ const NewArticle = () => {
 						/>
 					) : (
 						<div
-							className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+							className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy radial border border-grey   items-center font-normal     ${
 								newArticlePromptVisible ? '' : 'mid-popup-hidden'
 							}`}
 							ref={newArticlePromptRef}
 						>
 							<div className="flex items-center flex-col gap-0 w-full leading-none">
-								<h1 className="text-2xl  text-center text-black">
+								<h1 className="text-2xl  text-center text-fade-blue">
 									Create a new Article
 								</h1>
 							</div>
-							<div className="flex flex-col gap-0 items-center justify-center w-full">
+							<div className="flex flex-col gap-2 items-center justify-center w-full">
 								{imagePreview ? (
 									// eslint-disable-next-line
 									<img src={imagePreview} alt="icon" className="w-full   " />
 								) : (
-									<IoImageSharp className="text-9xl  text-gray-500 object-cover" />
+									<IoImageSharp className="text-9xl  text-silver object-cover" />
 								)}
 								<button
-									className=" text-black link-style-dark text-xs"
+									className=" text-white link-style-dark text-xs"
 									onClick={handleClickSelect}
 								>
 									{imageUrl ? 'Choose another' : 'Select Image'}
@@ -176,18 +176,20 @@ const NewArticle = () => {
 							</div>
 							{!linkname.startsWith('/admin/topics/') && (
 								<div
-									className="py-2 px-2 bg-white border border-gray-300 text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer w-full justify-between"
+									className="py-2 px-2 bg-deepBlue border border-grey radial  text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer w-full justify-between"
 									onClick={toggleTopicPrompt}
 								>
-									<span className="capitalize">Topic: {selectedTopic}</span>{' '}
+									<span className="capitalize text-white">
+										Topic: {selectedTopic}
+									</span>{' '}
 									<FaAngleDown
-										className={`${
+										className={`text-white ${
 											topicPrompt ? 'rotate-180' : ''
 										} duration-150`}
 									/>
 									{topicPrompt && (
 										<div
-											className={`flex flex-col bg-white shadow-lg w-full rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20 ${
+											className={`flex flex-col bg-navy radial  shadow-lg w-full rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey z-20 ${
 												topicPromptVisible ? 'opacity-100' : 'opacity-0'
 											}`}
 											ref={topicPromptRef}
@@ -198,15 +200,17 @@ const NewArticle = () => {
 														key={data.title}
 														className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150  ${
 															selectedTopic === data.slug
-																? 'bg-gray-50'
-																: 'hover:bg-gray-50'
+																? 'bg-deepBlue'
+																: 'hover:bg-deepBlue'
 														}`}
 														onClick={() => {
 															toggleTopicPrompt();
 															setSelectedTopic(data.slug);
 														}}
 													>
-														<span className="capitalize">{data.title}</span>
+														<span className="capitalize text-white">
+															{data.title}
+														</span>
 													</button>
 												))}
 										</div>
@@ -220,7 +224,6 @@ const NewArticle = () => {
 								error={error}
 								setError={setError}
 								placeholder="hosting"
-								classname_override="!bg-lightGrey"
 								autofocus={true}
 								label="Title"
 								name="title"
@@ -232,7 +235,6 @@ const NewArticle = () => {
 								textarea
 								label="Description"
 								error={error}
-								classname_override="!bg-lightGrey !text-black !rounded-sm "
 								setError={setError}
 								placeholder="Everything hosting"
 								errorContent="Description is required"
@@ -242,14 +244,14 @@ const NewArticle = () => {
 
 							{!error && (
 								<>
-									<h1 className="text-xs text-center text-gray-600">
+									<h1 className="text-xs text-center text-silver">
 										*more details will need to be filled in the article page and
 										by default an article is unpublished until set
 									</h1>
 								</>
 							)}
 							{error && (
-								<h1 className="text-xs text-center text-red">{error}</h1>
+								<h1 className="text-xs text-center text-red-300">{error}</h1>
 							)}
 							<div className="gap-2 flex w-full">
 								<AsyncButton

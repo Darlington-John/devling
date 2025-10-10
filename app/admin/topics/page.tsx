@@ -25,11 +25,11 @@ const Topics = () => {
 	});
 
 	return (
-		<main className="px-4 py-6 bg-white min-h-screen flex flex-col gap-16 w-full">
+		<main className="px-4 py-6 bg-dark-navy min-h-screen flex flex-col gap-16 w-full">
 			<div className="flex items-center justify-between w-full flex-wrap gap-3">
 				<div className="flex flex-col gap-3">
-					<h1 className="text-3xl font-semibold">All Topics</h1>
-					<p className="text-base max-w-[600px]">
+					<h1 className="text-3xl font-semibold text-fade-blue">All Topics</h1>
+					<p className="text-base max-w-[600px] text-silver">
 						Manage all your topics in one place—edit, publish, or delete with
 						ease to keep your content fresh and organized.
 					</p>

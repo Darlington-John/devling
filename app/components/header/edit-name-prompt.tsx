@@ -71,16 +71,16 @@ const EditName = ({
 		isActive && (
 			<div className="fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center        backdrop-brightness-50  px-8     xs:px-0">
 				<div
-					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy border border-grey radial   items-center font-normal     ${
 						isVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={ref}
 				>
 					<div className="flex items-center flex-col gap-0 w-full leading-none">
-						<h3 className="text-2xl sf-bold text-center text-black">
+						<h3 className="text-2xl sf-bold text-center text-fade-blue">
 							Edit Name
 						</h3>
-						<p className="text-grey-blue text-center text-sm ">
+						<p className="text-silver text-center text-sm ">
 							Enter new name below
 						</p>
 					</div>
@@ -90,7 +90,6 @@ const EditName = ({
 						error={error}
 						setError={setError}
 						placeholder="first name"
-						classname_override="!bg-lightGrey"
 						autofocus={true}
 						name="firstName"
 						errorContent="Name is required"
@@ -100,7 +99,6 @@ const EditName = ({
 						value={lastName}
 						setValue={setLastName}
 						error={error}
-						classname_override="!bg-lightGrey"
 						setError={setError}
 						placeholder="last name"
 						name="lastName"

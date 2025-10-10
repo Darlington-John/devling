@@ -52,7 +52,6 @@ const Login = ({
 				setValue={setEmail}
 				setError={setError}
 				errorContent={errorContent}
-				classname_override="!bg-lightGrey"
 				error={error}
 				label="email*"
 				inputType="email"
@@ -67,7 +66,6 @@ const Login = ({
 				setValue={setPassword}
 				setError={setError}
 				errorContent={errorContent}
-				classname_override="!bg-lightGrey"
 				error={error}
 				name="password"
 				inputType={passwordVisible ? 'text' : 'password'}
@@ -79,7 +77,7 @@ const Login = ({
 
 			<div className="flex flex-col gap-3 w-full  text-sm pt-5">
 				<button
-					className="text-purple hover:text-darkPurple   self-start"
+					className="text-blue hover:text-darkBlue   self-start"
 					onClick={() => {
 						setCurrentAction?.('forgot-password');
 						setError?.('');
@@ -88,10 +86,10 @@ const Login = ({
 					Set or Forgot Password?
 				</button>
 				<div>
-					<span className="text-black">New to WeFitHost Blog? </span>
+					<span className="text-silver">New to WeFitHost Blog? </span>
 
 					<button
-						className="text-purple hover:text-darkPurple"
+						className="text-blue hover:text-darkBlue"
 						onClick={() => {
 							setCurrentAction?.('sign-up');
 							setError?.('');
@@ -108,7 +106,7 @@ const Login = ({
 			<AsyncButton
 				action="Log In"
 				loading={loading}
-				classname_override="max-sm:!h-[40px] hover:!bg-darkPurple duration-150 "
+				classname_override="max-sm:!h-[40px] hover:!bg-darkBlue duration-150 "
 				success={success}
 				disabled={!email || !password}
 				onClick={() => submit('log-in')}

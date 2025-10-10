@@ -60,10 +60,10 @@ const LogoutPrompt = ({
 	return (
 		logoutPrompt && (
 			<div
-				className={`fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center        backdrop-brightness-50  px-8     xs:px-0 `}
+				className={`fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center backdrop-brightness-50  px-8     xs:px-0 `}
 			>
 				<div
-					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy radial border border-grey   items-center font-normal     ${
 						isLogoutPromptVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={logoutPromptRef}
@@ -71,10 +71,10 @@ const LogoutPrompt = ({
 					<div className="flex flex-col  items-center">
 						<Image src={waving} className="w-20" alt="waving" />
 						<div className="flex flex-col gap-2">
-							<h3 className="text-[27px] text-center text-black font-semibold">
+							<h3 className="text-[27px] text-center text-fade-blue font-semibold">
 								See you soon
 							</h3>
-							<p className="text-sm sf-light  text-center text-light-blue">
+							<p className="text-sm sf-light  text-center text-silver">
 								You are about to logout.
 								<br />
 								Are you sure that&apos;s what you want?
@@ -89,7 +89,7 @@ const LogoutPrompt = ({
 						<AsyncButton
 							onClick={clearCookies}
 							action="Confirm logout"
-							classname_override="!h-[40px] hover:ring  hover:ring-purple   hover:ring-offset-1 hover:ring-[2px]  text-sm duration-300  rounded-md"
+							classname_override="!h-[40px]  text-sm duration-300  rounded-md"
 							loading={clearing}
 							disabled={clearing}
 							success={successful}

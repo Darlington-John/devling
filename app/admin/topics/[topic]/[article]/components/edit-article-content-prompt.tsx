@@ -99,7 +99,7 @@ const EditArticleContentPrompt = ({
 		editArticleContentPrompt && (
 			<div className="fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center       backdrop-brightness-50  px-8     xs:px-0">
 				<div
-					className={`w-[900px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white items-start font-normal     ${
+					className={`w-[900px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-dark-navy items-start font-normal   radial border border-grey  ${
 						editArticleContentPromptVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={editArticleContentPromptRef}
@@ -125,7 +125,7 @@ const EditArticleContentPrompt = ({
 						/>
 
 						<button
-							className="text-sm text-white bg-gray-600 rounded-sm py-3 px-6 hover:bg-gray-700 duration-150"
+							className="text-sm text-white bg-gray-600 rounded-sm py-3 px-6 hover:bg-gray-500 duration-150"
 							onClick={toggleEditArticleContentPrompt}
 						>
 							Cancel

@@ -15,7 +15,7 @@ const Header = () => {
 		setAdminOverlayOpen(!adminOverlayOpen);
 	};
 	return (
-		<header className="py-4  mx-auto w-full  bg-white  z-50 flex items-center justify-between px-4 max-xl:px-10 max-xs:px-5 max-2xl:py-2 gap-3 sticky top-0">
+		<header className="py-2  mx-auto w-full  bg-dark-navy  z-50 flex items-center justify-between px-4 max-xl:px-10 max-xs:px-5 max-2xl:py-2 gap-3 sticky top-0 border-b-grey border-b border-dashed ">
 			<div className="items-center justify-center    flex-col invisible max-lg:flex max-lg:visible">
 				<Link href={'/'}>
 					<Image
@@ -25,7 +25,7 @@ const Header = () => {
 						priority
 					/>
 				</Link>
-				<h1 className="text-xs text-grey neue  ">Admin Dashboard</h1>
+				<h1 className="text-xs text-fade-blue neue  ">Admin Dashboard</h1>
 			</div>
 			<div className="flex items-center gap-2 justify-self-end">
 				<ProfileDropdown />
@@ -35,9 +35,9 @@ const Header = () => {
 					onClick={handleToggleAdminOverlay}
 				>
 					{adminOverlayOpen ? (
-						<IoMdClose className="text-2xl text-black " />
+						<IoMdClose className="text-2xl text-silver " />
 					) : (
-						<IoMdMenu className="text-2xl text-black" />
+						<IoMdMenu className="text-2xl text-silver" />
 					)}
 				</button>
 			</div>

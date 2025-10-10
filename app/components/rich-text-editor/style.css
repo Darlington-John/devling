@@ -25,19 +25,19 @@
     } */
     /* Code and preformatted text styles ß*/
     pre {
-        background: #173041;
+        background: var(--color-deepBlue);
         border-radius: 5px;
-        font-family: monospace;
         margin: 1rem 0;
         padding: 0.5rem 0.7rem;
-        color: yellow;
-        code {
-            background: none;
-            color: inherit;
+       code {
+            color: hsl(60 60% 50%);
             font-size: 14px;
             padding: 0;
+
+        font-family: monospace;
         }
     }
+     
     blockquote {
         border-left: 2px solid #0AA0EA;
         margin: 0.5rem 0;
@@ -58,6 +58,7 @@
 
 .tiptap a {
     cursor: pointer;
+    color: hsl(199.82 91.8% 85.84%);
 }
 
 .tiptap li {
@@ -69,6 +70,7 @@
 
 .tiptap li::before {
     content: "•";
+    color: hsl(215, 15%, 90%) ;
     /* custom bullet */
     margin-right: 0.5rem;
     font-size: larger
@@ -87,11 +89,13 @@
     margin-bottom: 0.5rem;
     font-weight: 600;
     font-family: var(--font-quicksand) !important;
+   
 }
 
 .tiptap p {
     font-size: 16px;
-    font-weight: 400
+    font-weight: 400;
+    color:  hsl(215, 15%, 90%) !important;
 }
 
 .tiptap h1 strong,
@@ -100,8 +104,17 @@
 .tiptap h5 strong,
 .tiptap h6 strong {
     font-family: var(--font-poppinsextra) !important;
+   
 }
-
+.tiptap h1,
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+   
+     color: #fff !important;
+}
 strong {
     font-weight: 500 !important;
 }

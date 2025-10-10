@@ -30,7 +30,7 @@ const BlockedTable = ({
 	return (
 		<>
 			<input
-				className={`h-[40px]  py-1 px-3 bg-white  text-black   text-sm    focus:ring-[1px]    ring-purple    outline-none w-[350px]  duration-150 rounded-sm max-2xl:w-[250px] max-lg:w-full self-end
+				className={`h-[40px]  py-1 px-3  text-white  text-sm    focus:ring-[1px]    ring-blue bg-grey    outline-none w-[350px]  duration-150 rounded-sm max-2xl:w-[250px] max-lg:w-full self-end
 pr-8
             `}
 				placeholder="Search for a member"
@@ -40,8 +40,8 @@ pr-8
 				}}
 			/>
 			<section className="flex gap-3 flex-col w-full  overflow-auto justify-end">
-				<div className="flex flex-col   rounded-md  border   border-[#dfdde3] w-full min-w-[1000px]">
-					<div className="w-full flex gap-1 bg-[#EAEAEC]">
+				<div className="flex flex-col   rounded-md  border   border-grey w-full min-w-[1000px]">
+					<div className="w-full flex gap-1 bg-grey text-silver">
 						<div className="w-[25%] py-2 px-3 text-sm">Email/I.P</div>
 						<div className="w-[30%] py-2 px-3 text-sm">Blocked by</div>
 						<div className="w-[20%] py-2 px-3 text-sm">Reason</div>
@@ -63,7 +63,7 @@ pr-8
 									.map((_, i) => (
 										<div
 											key={i}
-											className="h-[40px] flex items-center px-3 text-sm border-t border-t-lightGrey bg-white w-full"
+											className="h-[40px] flex items-center px-3 text-sm border-t border-t-grey bg-navy w-full"
 										></div>
 									))}
 							</>

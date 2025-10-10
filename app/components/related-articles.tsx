@@ -21,7 +21,7 @@ const RelatedArticlesSection = ({ header, related_articles }: RelatedProps) => {
 	return (
 		<aside className="flex w-full flex-col gap-5 max-2xl:gap-4  py-10 ">
 			{header && (
-				<h3 className="text-[28px] poppins-bold max-xl:text-xl">{header}</h3>
+				<h3 className="text-[28px] poppins-bold max-xl:text-xl text-fade-blue">{header}</h3>
 			)}
 
 			<Swiper

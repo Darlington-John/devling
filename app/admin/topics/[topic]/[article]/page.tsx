@@ -64,23 +64,23 @@ const Article = () => {
 		<main className=" flex flex-col mx-auto max-w-[1500px] min-h-screen w-full gap-10 py-12 px-8 max-md:py-6 max-md:gap-5 max-xs:px-5">
 			<Loader fetching={fetching} error={errorFetching}>
 				<section className="flex w-full flex-col gap-3 items-start">
-					<div className="flex w-full  bg-[#14132b] rounded-2xl overflow-hidden max-md:flex-col  max-md:rounded-sm max-md:bg-transparent items-center">
+					<div className="flex w-full  bg-navy rounded-2xl overflow-hidden max-md:flex-col  max-md:rounded-sm max-md:bg-transparent items-center">
 						<div className="relative w-1/2 max-md:w-full">
 							{/* eslint-disable-next-line */}
 							<img
 								src={article?.image}
 								alt={article?.title || 'article image'}
-								className="w-full  bg-[#ffffff] object-cover    max-md:max-h-auto max-md:rounded-sm"
+								className="w-full  bg-deepBlue object-cover    max-md:max-h-auto max-md:rounded-sm"
 							/>
 						</div>
-						<div className="flex items-start flex-col justify-between p-20 w-1/2 max-2xl:p-5 max-md:w-full    max-md:bg-white max-md:p-0 max-md:py-2 gap-1">
-							<button className="bg-purple hover:bg-darkPurple text-white text-lg max-dmd:text-sm h-[40px] px-2.5 duration-150 rounded-sm max-md:text-sm max-dmd:h-[30px] max-md:hidden">
+						<div className="flex items-start flex-col justify-between p-20 w-1/2 max-2xl:p-5 max-md:w-full    max-md:bg-navy max-md:p-2 max-md:py-2 gap-1">
+							<button className="bg-blue hover:bg-darkBlue text-white text-lg max-dmd:text-sm h-[40px] px-2.5 duration-150 rounded-sm max-md:text-sm max-dmd:h-[30px] max-md:hidden">
 								{article?.topic.title}
 							</button>
-							<h1 className="text-[32px] poppins-bold  text-white max-dmd:text-xl max-md:text-black max-md:text-lg ">
+							<h1 className="text-[32px] poppins-bold  text-white max-dmd:text-xl  max-md:text-lg ">
 								{article?.title}
 							</h1>
-							<p className="text-lg  text-white  max-md:text-black max-dmd:text-sm">
+							<p className="text-lg  text-white  max-md:text-silver max-dmd:text-sm">
 								{article?.description}
 							</p>
 							<div className=" items-center gap-2 hidden md:flex">

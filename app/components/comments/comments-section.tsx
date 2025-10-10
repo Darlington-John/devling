@@ -65,7 +65,7 @@ const CommentsSection = () => {
 	});
 	return (
 		<aside className="flex flex-col gap-3 w-full ">
-			<h3 className="text-2xl poppins-bold max-md:text-xl">Comments</h3>
+			<h3 className="text-2xl poppins-bold max-md:text-xl text-fade-blue">Comments</h3>
 			<div className="flex flex-col gap-1">
 				<div className="flex items-center gap-2">
 					<ClassicInput
@@ -73,7 +73,7 @@ const CommentsSection = () => {
 						setValue={setComment}
 						errorContent="Comment is required"
 						placeholder="Add a comment..."
-						classname_override="!bg-lightGrey"
+					
 						error={commentError}
 						setError={setCommentError}
 					/>

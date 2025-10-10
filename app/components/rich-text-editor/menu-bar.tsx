@@ -65,12 +65,6 @@ export const MenuBar = ({ editor }: editorProps) => {
 			pressed: editor.isActive('strike'),
 			icon: <Strikethrough size={15} />,
 		},
-		{
-			onClick: () => editor.chain().focus().toggleCode().run(),
-			disabled: !editor.can().chain().focus().toggleCode().run(),
-			pressed: editor.isActive('code'),
-			icon: <Code size={15} />,
-		},
 		// {
 		// 	onClick: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
 		// 	disabled: undefined,
@@ -140,13 +134,15 @@ export const MenuBar = ({ editor }: editorProps) => {
 		},
 	];
 	return (
-		<div className="text-black flex items-center gap-1 w-full  sticky top-1   z-1  bg-white p-2">
+		<div className="text-white flex items-center gap-1 w-full  sticky top-1   z-1  bg-navy radial p-2 rounded-md">
 			{options.map((opt, index) => (
 				<button
 					onClick={opt.onClick}
 					disabled={opt.disabled}
-					className={` p-1.5   rounded-full ${
-						opt.pressed ? 'bg-gray-200' : ' hover:bg-gray-100'
+					className={` p-1.5   rounded-full  ${
+						opt.pressed
+							? 'bg-darkBlue text-white'
+							: ' hover:bg-deepBlue text-silver'
 					}`}
 					key={index}
 				>

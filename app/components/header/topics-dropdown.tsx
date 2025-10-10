@@ -26,7 +26,7 @@ const TopicsDropdown = () => {
 	return (
 		<div className="relative">
 			<button
-				className="flex items-center gap-2 duration-150 link-style-dark"
+				className="flex items-center gap-2 duration-150 link-style-dark text-silver"
 				onClick={toggleDropdown}
 			>
 				<span>Topics</span>
@@ -36,7 +36,7 @@ const TopicsDropdown = () => {
 			</button>
 			{dropdown && (
 				<div
-					className={`w-[200px]        py-4 px-2  flex flex-col       duration-300 absolute top-8 left-0    shadow-2xl  rounded-lg text-[16px] z-40 bg-white border-lightGrey border ${
+					className={`w-[200px]        p-2  flex flex-col       duration-300 absolute top-8 left-0    shadow-2xl  rounded-lg text-[16px] z-40 bg-navy radial gap-0.5 border-grey border ${
 						dropdownVisible ? 'opacity-100' : 'opacity-0'
 					}`}
 					ref={dropdownRef}
@@ -44,25 +44,25 @@ const TopicsDropdown = () => {
 					{error ? (
 						<span className="text-xs">An error occurred</span>
 					) : isFetching ? (
-						<div className="flex w-full h-[180px] bg-white items-center justify-center">
+						<div className="flex w-full h-[180px] bg-deepBlue items-center justify-center">
 							<Image src={loadingIcon} className="w-10" alt="loading" />
 						</div>
 					) : topics && topics.length > 0 ? (
 						topics.map((topic) => (
 							<Link
-								href={`/topics/${topic.title}`}
+								href={`/topics/${topic.slug}`}
 								key={topic?.title}
 								className={`py-1.5 text-start px-2 duration-150 uppercase ${
 									topic.title === topic_param
-										? 'bg-purple-100 text-black'
-										: 'hover:bg-[#f1f1f4] '
+										? 'bg-deepBlue  text-white'
+										: 'hover:bg-grey text-white'
 								}`}
 							>
 								{topic?.title}
 							</Link>
 						))
 					) : (
-						<span className="text-xs">No topics yet</span>
+						<span className="text-sm text-silver">No topics yet</span>
 					)}
 				</div>
 			)}

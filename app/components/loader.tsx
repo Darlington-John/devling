@@ -21,21 +21,21 @@ const Loader: React.FC<LoaderProps> = ({
 }) => {
 	const renderErrorState = () => (
 		<div className=" min-h-[50vh] w-full flex items-center justify-center  flex-col">
-			<div className="flex  flex-col gap-3 bg-purple-50    rounded-2xl  w-[400px] py-2 max-xs:w-full max-xs:px-4">
+			<div className="flex  flex-col gap-3 bg-deepBlue    rounded-2xl  w-[400px] py-2 max-xs:w-full max-xs:px-4">
 				<div className="flex gap-4 items-start    p-4  w-full" role="alert">
 					<Image src={errorIcon} className="w-8 max-sm:w-6" alt="Error icon" />
 					<div className="flex flex-col gap-1">
-						<p className=" text-xl text-black      spaced leading-none max-sm:text-base">
+						<p className=" text-xl text-fade-blue      spaced leading-none max-sm:text-base">
 							{message}
 						</p>
-						<p className="text-sm  normal-case  tracking-normal text-gray-600 line-clamp-3">
+						<p className="text-sm  normal-case  tracking-normal text-silver line-clamp-3">
 							{error}
 						</p>
 					</div>
 				</div>
 				<div className="w-full  items-center justify-start  px-4 flex gap-2">
 					<button
-						className="h-[30px]  px-3 text-xs bg-purple rounded-sm   hover:ring ring-purple ring-offset-1  duration-150 text-white "
+						className="h-[30px]  px-3 text-xs bg-blue rounded-sm   hover:ring ring-blue ring-offset-1  duration-150 text-white "
 						onClick={try_again ? try_again : () => window.location.reload()}
 					>
 						Try again
@@ -52,7 +52,7 @@ const Loader: React.FC<LoaderProps> = ({
 			aria-live="polite"
 		>
 			<div className=" flex items-center justify-center  w-20  h-20   relative  ">
-				<div className="bg-purple-50 p-5 absolute  animate-ping w-full h-full   "></div>
+				<div className="bg-deepBlue p-5 absolute  animate-ping w-full h-full   "></div>
 				<Image
 					src={logo}
 					alt="Loading"

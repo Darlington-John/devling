@@ -108,7 +108,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 		<>
 			<div className="py-2 flex items-center gap-2">
 				<button
-					className={`px-2   flex  items-center  h-[25px]   gap-1 text-gray-600 hover:text-purple duration-150  rounded-full  `}
+					className={`px-2   flex  items-center  h-[25px]   gap-1 text-fade-blue hover:text-blue duration-150  rounded-full  `}
 					onClick={() => {
 						setIsOpen(!isOpen);
 					}}
@@ -128,7 +128,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 						user?.role === 'super_admin') && (
 						<div className="relative">
 							<button
-								className="px-2 flex items-center h-[25px] gap-1 text-gray-600 hover:text-purple duration-150 rounded-full"
+								className="px-2 flex items-center h-[25px] gap-1 text-fade-blue hover:text-blue duration-150 rounded-full"
 								onClick={() => {
 									toggleCommentPrompt();
 								}}
@@ -138,14 +138,14 @@ const ReplyComment = ({ comment }: replyProps) => {
 
 							{commentPrompt && (
 								<div
-									className={`flex flex-col bg-white shadow-lg w-[150px] rounded-md duration-150 absolute top-0 left-[100%] divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20 ${
+									className={`flex flex-col bg-navy radial  border-grey border shadow-lg w-[150px] rounded-md duration-150 absolute top-0 left-[100%] divide-y divide-grey overflow-hidden z-20 ${
 										commentPromptVisible ? 'opacity-100' : 'opacity-0'
 									}`}
 									ref={commentPromptRef}
 								>
 									{comment?.comment_by?._id === user?._id && (
 										<button
-											className="py-2 w-full text-[13px] text-grey flex items-center gap-2 px-3 hover:bg-lightGrey duration-150"
+											className="py-2 w-full text-[13px] text-white flex items-center gap-2 px-3 hover:bg-deepBlue duration-150"
 											onClick={toggleEditCommentPrompt}
 										>
 											<FaPen className="text-sm" />
@@ -154,7 +154,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 									)}
 
 									<button
-										className="py-2 w-full text-[13px] text-grey flex items-center gap-2 px-3 hover:bg-lightGrey duration-150"
+										className="py-2 w-full text-[13px] text-silver flex items-center gap-2 px-3 hover:bg-deepBlue duration-150"
 										onClick={toggleDeleteCommentPrompt}
 									>
 										<RiDeleteBinLine className="text-sm text-red" />
@@ -188,7 +188,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 						setValue={setReply}
 						errorContent="Comment is required"
 						placeholder="Add comment..."
-						classname_override="!bg-lightGrey !h-[35px] h"
+						classname_override="!h-[35px] h"
 						error={replyError}
 						setError={setReplyError}
 					/>
@@ -245,4 +245,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 };
 
 export default ReplyComment;
+
+
+
 

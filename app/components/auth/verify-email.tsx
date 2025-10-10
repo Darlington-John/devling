@@ -84,7 +84,7 @@ const VerifyEmail = ({
 							onPaste={handlePaste}
 							onKeyDown={(e) => handleKeyDown(e, index)}
 							maxLength={1}
-							className={`text-[22px]   outline-none px-2 py-3 rounded-md w-full bg-lightGrey text-center focus:ring-2 ring-purple h-[56px]  text-black  grow-0 shrink-0 max-w-[55px]  max-h-[56px]  ${
+							className={`text-[22px]   outline-none px-2 py-3 rounded-md w-full bg-deepBlue text-center focus:ring-2 ring-blue h-[56px]  text-white  grow-0 shrink-0 max-w-[55px]  max-h-[56px]  ${
 								error && 'border border-red'
 							}`}
 							placeholder="*"
@@ -102,7 +102,7 @@ const VerifyEmail = ({
 				action="Verify"
 				loading={isVerifying}
 				success={success}
-				classname_override="hover:!bg-darkPurple duration-150"
+				classname_override="hover:!bg-darkBlue duration-150"
 				disabled={!isVerificationCodeComplete()}
 				onClick={() => submit(auth_action)}
 			/>

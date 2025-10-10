@@ -90,7 +90,7 @@ const CropImage = ({
 
 	return (
 		<div
-			className="w-[350px] flex flex-col py-6 px-6 gap-4 rounded-lg bg-white items-center font-normal"
+			className="w-[350px] flex flex-col py-6 px-6 gap-4 rounded-lg bg-navy radial border border-grey items-center font-normal"
 			ref={ref}
 		>
 			{selecting && (
@@ -116,7 +116,7 @@ const CropImage = ({
 						>
 							-
 						</button>
-						<span className="text-sm text-black">{zoom.toFixed(1)}x</span>
+						<span className="text-sm text-silver">{zoom.toFixed(1)}x</span>
 						<button
 							onClick={() => setZoom((z) => Math.min(3, z + 0.1))}
 							className="bg-gray-500 text-white hover:bg-gray-600 w-5 h-5 flex items-center justify-center font-bold"
@@ -137,7 +137,7 @@ const CropImage = ({
 								showCroppedImage();
 								setSelecting(false);
 							}}
-							className="bg-purple hover:bg-darkPurple px-3 py-2 text-white rounded text-xs"
+							className="bg-blue hover:bg-darkBlue px-3 py-2 text-white rounded text-xs"
 						>
 							Save
 						</button>

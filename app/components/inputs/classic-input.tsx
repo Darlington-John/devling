@@ -80,7 +80,7 @@ const ClassicInput = <T extends string | number>({
 					className={`text-[11px]  uppercase tracking-wide   ${
 						error && serverError?.includes(error) && 'text-red'
 					} ${
-						error === errorContent && !value ? 'text-red' : 'text-light-blue'
+						error === errorContent && !value ? 'text-red' : 'text-silver'
 					}`}
 				>
 					{label}
@@ -89,7 +89,7 @@ const ClassicInput = <T extends string | number>({
 			{!textarea && (
 				<div className="flex  items-center relative w-full">
 					<input
-						className={`  ${classname_override} h-[45px] py-1 px-3 bg-grey  text-black   text-sm    focus:ring-[1px]    ring-purple    outline-none w-full  duration-150 rounded-sm hover:bg-gray-50 ${
+						className={`  ${classname_override} h-[45px] py-1 px-3 bg-[#1C3A4C]  text-white   text-sm    focus:ring-[1px]    ring-blue    outline-none w-full  duration-150 rounded-sm ${
 							error && serverError?.includes(error) && 'border-red border-2'
 						}     ${
 							required && error === errorContent && !value
@@ -126,7 +126,7 @@ ${password && 'pr-8'}
 			{textarea && (
 				<div className="flex flex-col gap-1 ">
 					<textarea
-						className={` ${classname_override}  min-h-[50px] py-1 px-3     bg-grey  text-black   text-sm    focus:ring-[1px]    ring-purple    outline-none w-full  duration-150 rounded-sm ${
+						className={` ${classname_override}  min-h-[50px] py-1 px-3     bg-[#1C3A4C]  text-white    text-sm    focus:ring-[1px]    ring-blue    outline-none w-full  duration-150 rounded-sm ${
 							error && serverError?.includes(error) && 'border-red border-2'
 						}     ${
 							error === errorContent && !value
@@ -142,7 +142,7 @@ ${password && 'pr-8'}
 							setError?.('');
 						}}
 					/>
-					<span className="text-xs text-silver-blue text-end">
+					<span className="text-xs text-silver text-end">
 						{String(value).length}/{maxlength ?? '160'}
 					</span>
 				</div>
@@ -150,10 +150,12 @@ ${password && 'pr-8'}
 			{error && serverError?.includes(error) && (
 				<h1 className="text-[11px]  text-red">{error}</h1>
 			)}
-			{note && <h1 className="text-[11px]  text-grey">*{note}</h1>}
+			{note && <h1 className="text-[11px]  text-silver">*{note}</h1>}
 		</div>
 	);
 };
 
 export default ClassicInput;
+
+
 

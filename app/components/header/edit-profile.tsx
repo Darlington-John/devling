@@ -104,16 +104,18 @@ const EditProfile = ({
 					/>
 				) : (
 					<div
-						className={`w-[350px] mid-popup duration-300 ease-in-out flex flex-col py-6 px-6 gap-4 rounded-lg bg-white   items-center relative z-40 isolation-auto font-normal ${
+						className={`w-[350px] mid-popup duration-300 ease-in-out flex flex-col py-6 px-6 gap-4 rounded-lg bg-navy border border-grey radial   items-center relative z-40 isolation-auto font-normal ${
 							isVisible ? '' : 'mid-popup-hidden'
 						}`}
 						ref={ref}
 					>
 						<div className="flex items-center flex-col gap-0 w-full leading-none">
-							<h3 className="text-2xl text-center text-black">Upload Image</h3>
+							<h3 className="text-2xl text-center text-fade-blue">
+								Upload Image
+							</h3>
 						</div>
 
-						<div className="flex flex-col gap-0 items-center justify-center">
+						<div className="flex flex-col gap-2 items-center justify-center">
 							{profilePreview ? (
 								// eslint-disable-next-line
 								<img
@@ -122,10 +124,10 @@ const EditProfile = ({
 									className="w-28  h-28  rounded-full "
 								/>
 							) : (
-								<IoImageSharp className="w-28  h-28  text-gray-500 object-cover" />
+								<IoImageSharp className="w-28  h-28  text-silver object-cover" />
 							)}
 							<button
-								className=" text-black link-style-dark text-xs"
+								className=" text-white link-style text-xs"
 								onClick={handleClickSelect}
 							>
 								{profileUrl ? 'Choose another' : 'Select Image'}

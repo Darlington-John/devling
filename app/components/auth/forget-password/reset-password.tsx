@@ -42,7 +42,6 @@ const ResetPassword = ({
 				setError={setError}
 				errorContent={errorContent}
 				error={error}
-				classname_override="!bg-lightGrey"
 				inputType={isPasswordVisible ? 'text' : 'password'}
 				password
 				toggleVisibility={togglePasswordVisibility}
@@ -58,7 +57,7 @@ const ResetPassword = ({
 				action="Reset"
 				loading={loading}
 				success={success}
-				classname_override="hover:!bg-darkPurple duration-150 "
+				classname_override="hover:!bg-darkBlue duration-150 "
 				disabled={!email || !password}
 				onClick={() => submit('forgot-password-reset')}
 			/>

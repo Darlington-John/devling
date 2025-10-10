@@ -51,7 +51,7 @@ const Article = () => {
 			>
 				<Loader fetching={isFetching} error={errorFetching}>
 					<section className="flex w-full flex-col gap-3 items-start">
-						<div className="flex w-full  bg-[#14132b] rounded-2xl overflow-hidden max-md:flex-col  max-md:rounded-sm max-md:bg-transparent items-center">
+						<div className="flex w-full  bg-navy rounded-2xl overflow-hidden max-md:flex-col  max-md:rounded-sm max-md:bg-transparent items-center">
 							<div className="relative w-1/2 max-md:w-full">
 								{/* eslint-disable-next-line */}
 								<img
@@ -61,7 +61,7 @@ const Article = () => {
 								/>
 							</div>
 							<div className="flex items-start flex-col justify-between p-20 w-1/2 max-2xl:p-5 max-md:w-full    max-md:bg-white max-md:p-0 max-md:py-2 gap-1">
-								<button className="bg-purple hover:bg-darkPurple text-white text-lg max-dmd:text-sm h-[40px] px-2.5 duration-150 rounded-sm max-md:text-sm max-dmd:h-[30px] max-md:hidden">
+								<button className="bg-blue hover:bg-darkBlue text-white text-lg max-dmd:text-sm h-[40px] px-2.5 duration-150 rounded-sm max-md:text-sm max-dmd:h-[30px] max-md:hidden">
 									{article_data?.topic.title}
 								</button>
 								<h1 className="text-[32px] poppins-bold  text-white max-dmd:text-xl max-md:text-black max-md:text-lg ">
@@ -112,8 +112,8 @@ const Article = () => {
 						<ArticleViewer content={article_data?.article} />
 						{!isFetching && !errorFetching && article_data?.author && (
 							<>
-								<div className=" border-t-1 border-gray-400 w-full  flex flex-col gap-2 py-4">
-									<h4 className=" text-base">About the author</h4>
+								<div className=" border-t-1 border-fade-blue  border-dotted w-full  flex flex-col gap-2 py-4">
+									<h4 className=" text-base text-fade-blue">About the author</h4>
 									<div className=" items-center gap-2 flex">
 										{/* eslint-disable-next-line */}
 										<img
@@ -121,15 +121,15 @@ const Article = () => {
 												article_data?.author?.profile ??
 												'/icons/default-user.svg'
 											}
-											className="w-9 h-9 object-cover rounded-full border border-gray-400"
+											className="w-9 h-9 object-cover rounded-full border border-blue"
 											alt={article_data?.author?.first_name ?? 'author'}
 										/>
 										<div className="flex items-start gap-0  flex-col">
-											<span className="text-base font-semibold text-black max-md:text-sm">
+											<span className="text-base font-semibold text-white max-md:text-sm">
 												{article_data?.author?.first_name}{' '}
 												{article_data?.author?.last_name}
 											</span>
-											<div className="flex gap-4 items-center text-sm  text-black max-md:text-black max-md:text-xs">
+											<div className="flex gap-4 items-center text-sm  text-silver max-md:text-black max-md:text-xs">
 												<span>
 													{formatDate(article_data?.createdAt as string)}
 												</span>
@@ -141,7 +141,7 @@ const Article = () => {
 											{article_data?.author?.bio
 												.split('\n\n')
 												.map((para, i) => (
-													<p key={i} className="max-md:text-sm">
+													<p key={i} className="max-md:text-sm text-silver">
 														{para}
 													</p>
 												))}

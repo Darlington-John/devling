@@ -21,7 +21,9 @@ const RelatedTopicsSection = ({ header, related_topics }: RelatedProps) => {
 	return (
 		<aside className="flex w-full flex-col gap-5 max-2xl:gap-4  py-10 max-xs:py-5">
 			{header && (
-				<h3 className="text-[28px] poppins-bold max-xl:text-xl">{header}</h3>
+				<h3 className="text-[28px] poppins-bold max-xl:text-xl text-fade-blue">
+					{header}
+				</h3>
 			)}
 			<Swiper
 				pagination={{
@@ -58,7 +60,7 @@ const RelatedTopicsSection = ({ header, related_topics }: RelatedProps) => {
 						<TopicCard
 							key={topic._id}
 							topic={topic}
-							classname_override="flex flex-col items-start overflow-hidden hover:bg-gray-100 duration-300 bg-gray-50 max-xs:gap-2  max-2xs:h-auto rounded-lg relative min-h-[430px] max-xl:min-h-[340px] max-xs:min-h-[370px] max-xs:min-h-[300px]
+							classname_override="flex flex-col items-start overflow-hidden  duration-300 bg-navy radial max-xs:gap-2  max-2xs:h-auto rounded-lg relative min-h-[430px] max-xl:min-h-[340px] max-xs:min-h-[370px] max-xs:min-h-[300px]  
  "
 						/>
 					</SwiperSlide>

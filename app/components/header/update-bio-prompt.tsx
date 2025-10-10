@@ -70,16 +70,16 @@ const UpdateBioPrompt = ({
 		isActive && (
 			<div className="fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center backdrop-brightness-50  px-8     xs:px-0">
 				<div
-					className={`w-[350px]  mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-6   rounded-lg bg-white   items-center font-normal     ${
+					className={`w-[350px]  mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-6   rounded-lg bg-navy radial border border-grey   items-center font-normal     ${
 						isVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={ref}
 				>
 					<div className="flex items-center flex-col gap-0 w-full leading-none">
-						<h3 className="text-2xl sf-bold text-center text-black">
+						<h3 className="text-2xl sf-bold text-center text-fade-blue">
 							Update Bio
 						</h3>
-						<p className="text-gray-700 text-center text-xs ">
+						<p className=" text-center text-xs text-silver">
 							A bio tells the reader more about you and allows them to see
 							things from your perspective or point of view.
 						</p>
@@ -92,7 +92,7 @@ const UpdateBioPrompt = ({
 						error={error}
 						setError={setError}
 						placeholder="John Doe is a Lagos-based UX Designer creating intuitive digital experiences for global brands."
-						classname_override="!bg-lightGrey !text-xs"
+						classname_override="!text-xs"
 						autofocus={true}
 						name="bio"
 						errorContent="Bio is required"
@@ -110,7 +110,7 @@ const UpdateBioPrompt = ({
 							onClick={updateBio}
 						/>
 						<button
-							className="bg-gray-500 text-center w-full  hover:outline outline-gray-600   !rounded-md text-sm text-white duration-150"
+							className="bg-gray-600 text-center w-full  hover:bg-gray-500   !rounded-md text-sm text-white duration-150"
 							onClick={togglePopup}
 							disabled={loading}
 						>

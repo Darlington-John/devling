@@ -23,7 +23,7 @@ const Overlay = () => {
 		<div
 			id="adminOverlay"
 			style={{ transform: 'translateX(-100%)' }}
-			className="hidden w-full  fixed z-40 top-0 right-0 bg-white  max-lg:flex      flex-col gap-16 justify-end   ease-out duration-[0.4s]  h-full text-[#000]  "
+			className="hidden w-full  fixed z-40 top-0 right-0 bg-dark-navy  max-lg:flex      flex-col gap-16 justify-end   ease-out duration-[0.4s]  h-full text-[#000]  "
 		>
 			<div className=" w-full  py-4   h-full mt-[57px]     flex flex-col  overflow-auto  gap-2 max-lg:py-0">
 				<Sidebar hidden={false} />

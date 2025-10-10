@@ -60,7 +60,7 @@ const Alerts = () => {
 	return (
 		<section className="flex flex-col gap-4  py-6 px-4 ">
 			<div className="flex items-center justify-between w-full max-2xs:flex-col max-2xs:gap-2 max-2xs:items-start ">
-				<h1 className="flex text-3xl neue-thin uppercase max-md:text-2xl  max-sm:text-xl">
+				<h1 className="flex text-3xl neue-thin uppercase max-md:text-2xl  max-sm:text-xl text-fade-blue">
 					Recent logs
 				</h1>
 			</div>
@@ -74,8 +74,8 @@ const Alerts = () => {
 			/>
 			<div className="w-full overflow-auto">
 				<div className="flex gap-3 flex-col w-full min-w-[1000px]">
-					<div className="flex flex-col w-full  rounded-md  border overflow-hidden  border-[#dfdde3]">
-						<div className="w-full flex gap-1 bg-[#EAEAEC]">
+					<div className="flex flex-col w-full  rounded-md  border overflow-hidden  border-grey">
+						<div className="w-full flex gap-1 bg-grey text-silver">
 							<div className="w-[20%] py-2 px-3 text-sm">User</div>
 							<div className="w-[15%] py-2 px-3 text-sm">Role</div>
 							<div className="w-[30%] py-2 px-3 text-sm">Action</div>
@@ -97,7 +97,7 @@ const Alerts = () => {
 										.map((_, i) => (
 											<div
 												key={i}
-												className="h-[40px] flex items-center px-3 text-sm border-t border-t-lightGrey bg-white w-full"
+												className="h-[40px] flex items-center px-3 text-sm border-t border-t-grey bg-navy w-full"
 											></div>
 										))}
 								</>

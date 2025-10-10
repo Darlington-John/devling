@@ -114,29 +114,29 @@ const EditSection = ({
 
 			<div className="flex flex-col justify-between max-xl:flex-row  gap-5 max-md:flex-col">
 				<div
-					className={`w-[450px] bg-white border-purple rounded-2xl  shrink-0 flex flex-col gap-4 items-center sticky top-10 shadow-lg p-4 max-xl:w-1/2 max-xl:static max-md:w-full max-xl:shadow-sm ${
+					className={`w-[450px] bg-navy radial  border-grey border rounded-2xl  shrink-0 flex flex-col gap-4 items-center sticky top-10 shadow-lg p-4 max-xl:w-1/2 max-xl:static max-md:w-full max-xl:shadow-sm ${
 						user?.role === 'super_admin' || article?.author?._id === user?._id
 							? ''
 							: 'invisible'
 					}`}
 				>
 					<div className="flex flex-col gap-3 ">
-						<h1 className="text-2xl poppins-bold flex gap-1">
+						<h1 className="text-2xl poppins-bold flex gap-1 text-fade-blue">
 							<FaPen /> Edit Article
 						</h1>
-						<p className="text-sm text-gray-600">
+						<p className="text-sm text-white">
 							To edit the article, select the specific part you want to change
 							from the options below, then click Publish to apply your changes.
 						</p>
-						<span className=" text-gray-700 text-xs ">
+						<span className=" text-white text-xs ">
 							Note: For an article to be published, certain fields are required
 							— title, description, cover image, duration (generated
 							automatically), and actual content.
 						</span>
 					</div>
-					<div className="flex gap-1 flex-col w-full font-normal">
+					<div className="flex gap-2 flex-col w-full font-normal">
 						<button
-							className="flex items-center justify-between w-full hover:bg-purple-50 border border-gray-100 p-2  rounded-md  h-[50px] text-sm"
+							className="flex items-center justify-between w-full hover:bg-deepBlue border-2 border-grey p-2  rounded-md  h-[50px] radial text-sm text-white"
 							onClick={() => {
 								toggleEditArticleContentPrompt();
 							}}
@@ -146,7 +146,7 @@ const EditSection = ({
 							<FaAngleRight />
 						</button>
 						<button
-							className="flex items-center justify-between w-full hover:bg-purple-50 border border-gray-100 p-2  rounded-sm  h-[50px] text-sm"
+							className="flex items-center justify-between w-full hover:bg-deepBlue border-2 border-grey p-2  rounded-sm  h-[50px] text-sm radial text-white"
 							onClick={() => {
 								toggleEditArticlePreviewPrompt();
 							}}
@@ -168,7 +168,7 @@ const EditSection = ({
 									action={article?.featured ? 'Unfeature' : 'Feature'}
 									loading={featuring}
 									success={featured}
-									classname_override=" !bg-gray-700 hover:!bg-gray-800"
+									classname_override=" !bg-gray-700 hover:!bg-gray-600"
 									disabled={featuring}
 									onClick={updateFeaturedState}
 								/>

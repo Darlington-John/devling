@@ -21,7 +21,7 @@ const ForgotPassword = ({
 }: forgotProps) => {
 	return (
 		<div className="flex items-center flex-col gap-4 w-full">
-			<h1 className="text-sm text-grey-blue text-center">
+			<h1 className="text-sm text-silver text-center">
 				You’re about to reset your password. Enter your email so we send
 				instructions to reset your password.
 			</h1>
@@ -33,7 +33,6 @@ const ForgotPassword = ({
 					value={email}
 					errorContent="All fields are required"
 					setValue={setEmail}
-					classname_override="!bg-lightGrey"
 					setError={setError}
 					label="Your email"
 					autofocus={true}
@@ -52,7 +51,7 @@ const ForgotPassword = ({
 				loading={isChecking}
 				success={success}
 				disabled={!email}
-				classname_override="max-sm:!h-[35px] hover:!bg-darkPurple duration-150 "
+				classname_override="max-sm:!h-[35px] hover:!bg-darkBlue duration-150 "
 				onClick={() => submit('forgot-password')}
 			/>
 		</div>

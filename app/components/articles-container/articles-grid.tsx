@@ -51,7 +51,7 @@ export const ArticleGrid = ({
 						className={`px-2 py-2 rounded-md  ${
 							currentPage === 1
 								? ' text-gray-500'
-								: 'bg-white text-black hover:bg-gray-200'
+								: 'bg-deepBlue ring-blue hover:ring text-white  hover:ring-offset-2 duration-150 ring-offset-dark-navy'
 						}`}
 						aria-label="Previous page"
 					>
@@ -81,8 +81,8 @@ export const ArticleGrid = ({
 										}}
 										className={`px-4 py-2 rounded-md text-sm ${
 											page === currentPage
-												? 'bg-purple text-white'
-												: 'bg-white text-black hover:bg-gray-200'
+												? 'bg-blue text-white'
+												: 'bg-deepBlue ring-blue hover:ring text-white  hover:ring-offset-2 duration-150 ring-offset-dark-navy'
 										}`}
 									>
 										{page}
@@ -96,8 +96,8 @@ export const ArticleGrid = ({
 						aria-label="Next page"
 						className={`px-2 py-2 rounded-md  ${
 							currentPage === totalPages
-								? ' text-gray-500 cursor-not-allowed'
-								: 'bg-white text-black hover:bg-gray-200'
+								? ' text-gray-500'
+								: 'bg-deepBlue ring-blue hover:ring text-white  hover:ring-offset-2 duration-150 ring-offset-dark-navy'
 						}`}
 					>
 						<MdKeyboardArrowRight />
@@ -107,4 +107,6 @@ export const ArticleGrid = ({
 		</div>
 	);
 };
+
+
 

@@ -71,23 +71,24 @@ const DeleteArticlePrompt = ({
 		isActive && (
 			<div className="fixed top-[0px]  h-full w-full  z-50 left-0 flex  justify-center  items-center        backdrop-brightness-50  px-8     xs:px-0">
 				<div
-					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white   items-center font-normal     ${
+					className={`w-[350px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy radial border border-grey   items-center font-normal     ${
 						isVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={ref}
 				>
-					<IoTrashBinOutline className="text-4xl  text-red-400 object-cover" />
+					<IoTrashBinOutline className="text-4xl  text-red-300 object-cover" />
 					<div className="flex items-center flex-col gap-1 w-full leading-none">
-						<h3 className="text-2xl sf-bold text-center text-black">
+						<h3 className="text-2xl sf-bold text-center text-fade-blue">
 							Delete Article
 						</h3>
-						<p className="text-sm text-center ">
-							Your&apos;re about to delete this article. Is that what you want?
+						<p className="text-sm text-center text-silver">
+							Your&apos;re about to delete this article. <br />
+							Is that what you want?
 						</p>
 					</div>
 
 					{error && (
-						<span className="text-xs text-center text-red">{error}</span>
+						<span className="text-xs text-center text-red-300">{error}</span>
 					)}
 					<div className="gap-2 flex w-full">
 						<AsyncButton
@@ -98,7 +99,7 @@ const DeleteArticlePrompt = ({
 							onClick={deleteTopic}
 						/>
 						<button
-							className="bg-gray-600 text-center w-full  hover:outline outline-gray-600   !rounded-md text-sm text-white duration-150"
+							className="bg-gray-600 text-center w-full  hover:outline outline-gray-500   !rounded-md text-sm text-white duration-150"
 							onClick={togglePopup}
 							disabled={loading}
 						>

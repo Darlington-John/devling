@@ -179,7 +179,7 @@ const AuthPrompt = () => {
 		authPopup && (
 			<div className="fixed bottom-[0px]  h-full w-full  z-110 left-0 flex  justify-center  items-center        backdrop-blur-xs backdrop-brightness-40  px-8      max-sm:px-4">
 				<div
-					className={`w-[450px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-white  items-center    max-2xs:w-full  max-sm:px-4 max-sm:py-4  max-sm:gap-2 ${
+					className={`w-[450px]     mid-popup   duration-300 ease-in-out flex flex-col py-6 px-6  gap-4   rounded-lg bg-navy   items-center radial border-grey border  max-2xs:w-full  max-sm:px-4 max-sm:py-4  max-sm:gap-2 ${
 						authPopupVisible ? '' : 'mid-popup-hidden'
 					}`}
 					ref={authPopupRef}
@@ -204,7 +204,7 @@ const AuthPrompt = () => {
 							)}
 
 						<button
-							className="p-2  rounded-full bg-purple  hover:bg-darkPurple self-end duration-150"
+							className="p-2  rounded-full bg-blue  hover:bg-darkBlue self-end duration-150"
 							onClick={toggleAuthPopup}
 						>
 							<FaXmark className="text-white text-xl max-sm:text-sm" />
@@ -212,7 +212,7 @@ const AuthPrompt = () => {
 					</div>
 					<div className="flex items-center   flex-col gap-3  w-[350px]  max-2xs:w-full max-sm:gap-1">
 						<div className="flex flex-col gap-2 text-center">
-							<h1 className="text-2xl text-black poppins-bold  max-sm:text-xl">
+							<h1 className="text-2xl text-fade-blue poppins-bold  max-sm:text-xl">
 								{currentAction === 'log-in' && 'Log In'}
 								{currentAction === 'sign-up' && 'Sign Up'}
 								{['verify-email', 'forgot-password-verify-email'].includes(
@@ -221,7 +221,7 @@ const AuthPrompt = () => {
 								{currentAction === 'forgot-password-reset' && 'Reset Password'}
 								{currentAction === 'forgot-password' && 'Reset Password'}
 							</h1>
-							<p className="text-sm text-grey-blue">
+							<p className="text-sm text-silver">
 								{currentAction === 'log-in' ||
 									(currentAction === 'sign-up' &&
 										'Join the community or log in to stay connected')}
@@ -241,15 +241,15 @@ const AuthPrompt = () => {
 						].includes(currentAction) && (
 							<>
 								<button
-									className="w-full h-[40px] rounded-full px-4 flex items-center justify-center gap-2 relative bg-purple-50 hover:bg-purple-100 duration-150"
+									className="w-full h-[40px] rounded-full px-4 flex items-center justify-center gap-2 relative bg-deepBlue hover:bg-grey duration-150"
 									onClick={() => handleSignIn()}
 								>
 									<Image src={google} alt="google" className="w-5 " />
-									<span className="text-sm text-black self-center sf-reg">
+									<span className="text-sm text-silver  self-center sf-reg">
 										Continue with Google
 									</span>
 								</button>
-								<span className="text-center  uppercase text-sm text-grey-blue ">
+								<span className="text-center  uppercase text-sm text-fade-blue ">
 									or
 								</span>
 							</>
@@ -345,4 +345,5 @@ const AuthPrompt = () => {
 };
 
 export default AuthPrompt;
+
 

@@ -48,7 +48,7 @@ const TopicCard = ({
 				href={admin ? `/admin/topics/${topic?.slug}` : `/topics/${topic?.slug}`}
 				className={`${
 					classname_override ??
-					'flex flex-col items-start overflow-hidden    hover:shadow-md duration-300 bg-gray-50 max-xs:gap-2  max-2xs:h-auto rounded-lg relative'
+					'flex flex-col items-start overflow-hidden    hover:shadow-md duration-300   max-xs:gap-2  max-2xs:h-auto rounded-lg relative border border-grey'
 				}      `}
 			>
 				{admin && (
@@ -67,13 +67,13 @@ const TopicCard = ({
 						)}
 						{adminPrompt && (
 							<div
-								className={`flex  flex-col bg-white shadow-lg  w-[130px] rounded-md   duration-150 absolute top-0 right-[100%] divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20   ${
+								className={`flex  flex-col bg-navy shadow-lg  w-[130px] rounded-md   duration-150 absolute top-0 right-[100%] divide-y divide-grey overflow-hidden border border-grey z-20   ${
 									adminPromptVisible ? 'opacity-100' : 'opacity-0 '
 								}`}
 								ref={adminPromptRef}
 							>
 								<button
-									className="py-2 w-full text-[13px]  text-grey flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+									className="py-2 w-full text-[13px]  text-silver flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 									onClick={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -85,7 +85,7 @@ const TopicCard = ({
 									<span>Edit topic</span>
 								</button>
 								<button
-									className="py-2 w-full text-[13px]  text-grey flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+									className="py-2 w-full text-[13px]  text-silver flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 									onClick={(e) => {
 										e.preventDefault();
 										e.stopPropagation();
@@ -113,7 +113,7 @@ const TopicCard = ({
 					</h3>
 				</div>
 				<div className="p-6 max-md:p-3">
-					<p className="text-base line-clamp-3 article-desc max-md:text-sm max-2xs:text-sm  ">
+					<p className="text-silver text-base line-clamp-3 article-desc max-md:text-sm max-2xs:text-sm  ">
 						{topic?.description}
 					</p>
 				</div>

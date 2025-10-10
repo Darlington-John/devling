@@ -59,7 +59,7 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 									slugify(article?.title) || ''
 							  }`
 					}
-					className="flex flex-col  items-start overflow-hidden  rounded-xl p-3 hover:shadow-md duration-150 bg-gray-50 max-xs:gap-2  max-2xs:h-auto relative justify-between gap-4"
+					className="flex flex-col  items-start overflow-hidden  rounded-xl p-3 hover:shadow-md duration-150 bg-dark-navy  max-xs:gap-2  max-2xs:h-auto relative justify-between gap-4 radial !ring ring-[#1d2126] hover:ring-grey"
 				>
 					{article?.title && (
 						<>
@@ -81,13 +81,13 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 
 									{adminPrompt && (
 										<div
-											className={`flex  flex-col bg-white shadow-lg  w-[130px] rounded-md   duration-150 absolute top-0 right-[100%] divide-y divide-lightGrey overflow-hidden border border-lightGrey z-20   ${
+											className={`flex  flex-col bg-navy radial shadow-lg  w-[130px] rounded-md   duration-150 absolute top-0 right-[100%] divide-y divide-grey overflow-hidden border border-grey z-20   ${
 												adminPromptVisible ? 'opacity-100' : 'opacity-0 '
 											}`}
 											ref={adminPromptRef}
 										>
 											<button
-												className="py-2 w-full text-[13px]  text-grey flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+												className="py-2 w-full text-[13px]  text-white flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 												onClick={(e) => {
 													e.preventDefault();
 													e.stopPropagation();
@@ -99,14 +99,14 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 												<span>Edit article</span>
 											</button>
 											<button
-												className="py-2 w-full text-[13px]  text-grey flex items-center gap-2  px-3 hover:bg-lightGrey duration-150"
+												className="py-2 w-full text-[13px]  text-white flex items-center gap-2  px-3 hover:bg-deepBlue duration-150"
 												onClick={(e) => {
 													e.preventDefault();
 													e.stopPropagation();
 													toggleDeleteArticlePrompt();
 												}}
 											>
-												<RiDeleteBin5Line className="text-sm text-red" />
+												<RiDeleteBin5Line className="text-sm text-red-300" />
 												<span>Delete article</span>
 											</button>
 										</div>
@@ -128,7 +128,7 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 									)}
 								</div>
 							)}
-							<div className="aspect-[465/301] w-full overflow-hidden rounded-xl blog-img relative   max-2xs:max-h-auto  bg-[#1f134690]">
+							<div className="aspect-[465/301] w-full overflow-hidden rounded-xl blog-img relative   max-2xs:max-h-auto  bg-[#0019338f]">
 								{/* eslint-disable-next-line */}
 								<img
 									src={article?.image}
@@ -140,21 +140,21 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 								)}
 							</div>
 							<div className="flex items-center justify-between w-full gap-2">
-								<div className="flex gap-4 items-center text-lg  max-dmd:text-base max-md:text-sm ">
+								<div className="flex gap-4 items-center text-lg  max-dmd:text-base max-md:text-sm text-silver">
 									<span>{formatDate(article?.createdAt)}</span>
 
 									<FaCircle className="text-[10px] " />
 
 									<span>{article?.duration || '2'} mins read</span>
 								</div>
-								<button className="bg-purple h-[30px] cursor-none duration-150 px-3 text-white text-sm rounded-sm font-semibold max-2xs:h-[30px] max-2xs:px-2  max-2xs:text-xs max-2xs:top-3 max-2xs:left-3 ">
+								<button className="bg-blue h-[30px] cursor-none duration-150 px-3 text-white text-sm rounded-sm font-semibold max-2xs:h-[30px] max-2xs:px-2  max-2xs:text-xs max-2xs:top-3 max-2xs:left-3 ">
 									{article?.topic.title}
 								</button>
 							</div>
-							<h3 className="text-lg poppins-bold line-clamp-2 max-2xs:text-base article-header">
+							<h3 className="text-lg poppins-bold line-clamp-2 max-2xs:text-base article-header text-fade-blue">
 								{article?.title}
 							</h3>
-							<p className="text-lg line-clamp-2 article-desc max-md:text-base max-xs:text-sm article-header">
+							<p className="text-lg line-clamp-2 article-desc max-md:text-base max-xs:text-sm article-header text-silver">
 								{article.description}
 							</p>
 							<div className="flex items-center justify-between w-full">
@@ -165,11 +165,11 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 										className="w-7 h-7 object-cover rounded-full max-sm:w-6 max-sm:h-6"
 										alt={article?.author?.first_name ?? 'author'}
 									/>
-									<span className="text-base font-semibold text-gray-700 max-sm:text-xs ">
+									<span className="text-base font-semibold text-silver max-sm:text-xs ">
 										{article?.author?.first_name} {article?.author?.last_name}
 									</span>
 								</div>
-								<button className="text-base text-purple hover:text-darkPurple max-sm:text-sm ">
+								<button className="text-base text-fade-blue hover:text-darkBlue max-sm:text-sm ">
 									Read more
 								</button>
 							</div>
