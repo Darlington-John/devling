@@ -101,7 +101,7 @@ const SetRole = ({
 										{`${member?.first_name} ${member?.last_name}`}{' '}
 									</span>
 									to an admin. He/She would be able to edit, delete and add
-									topics or articles. Are you sure you want to?
+									categories or articles. Are you sure you want to?
 								</p>
 							)}
 						</div>

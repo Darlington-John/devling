@@ -4,7 +4,6 @@ import './style.css';
 import {
 	BlocksIcon,
 	Bold,
-	Code,
 	CodeSquare,
 	// Heading1,
 	Heading2,

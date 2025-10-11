@@ -2,7 +2,7 @@ import { JSONContent } from '@tiptap/react';
 export interface IArticle {
 	_id: string;
 
-	topic: {
+	category: {
 		title: string;
 		_id: string;
 	};

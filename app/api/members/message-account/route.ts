@@ -56,8 +56,8 @@ export async function POST(req: NextRequest) {
 		await transporter.sendMail({
 			...mailOptions,
 			to: email,
-			text: 'Message from WeFitHost Blog',
-			subject: 'Message from WeFitHost Blog',
+			text: 'Message from Devling Blog',
+			subject: 'Message from Devling Blog',
 			html: `<table
 	style="
 		background-color: #fbfbff;
@@ -72,9 +72,9 @@ export async function POST(req: NextRequest) {
 	<tr>
 		<td align="center" style="padding-bottom: 10px">
 			<img
-				src="https://res.cloudinary.com/dl6pa30kz/image/upload/v1756039608/logo_hdvqjb_1_1_u8ljxj.png"
+				src="https://res.cloudinary.com/dycw73vuy/image/upload/v1760176571/Screenshot_2025-10-05_at_9.26.29_PM-removebg-preview_deooob.png"
 				style="width: 150px"
-				alt="wefithost logo"
+				alt="Devling logo"
 			/>
 		</td>
 	</tr>
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
 	<tr>
 		<td align="start" style="padding-top: 20px">
 			<p style="font-size: 14px; color: gray; margin: 0">
-				© WeFitHost. ${new Date()}
+				©Devling. ${new Date()}
 			</p>
 			
 		</td>

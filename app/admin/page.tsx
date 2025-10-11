@@ -8,7 +8,7 @@ import { IArticle } from '~/types/article';
 import ArticlesContainer from '../components/articles-container/articles-container';
 
 import Stats from './components/stats';
-import Topics from './topics/page';
+import Categories from './categories/page';
 import NewArticle from './components/new-article';
 
 const Admin = () => {
@@ -101,7 +101,7 @@ const Admin = () => {
 						admin={true}
 					/>
 				</div>
-				<Topics />
+				<Categories />
 			</div>
 		</div>
 	);

@@ -10,7 +10,7 @@ import { apiRequest } from '~/utils/api-request';
 import { usePopup } from '~/utils/toggle-popups';
 import { IoImageSharp } from 'react-icons/io5';
 import { useParams, usePathname } from 'next/navigation';
-import { useTopicsContext } from '~/app/context/topics-context';
+import { useCategoriesContext } from '~/app/context/categories-context';
 const NewArticle = () => {
 	const {
 		isActive: newArticlePrompt,
@@ -20,7 +20,7 @@ const NewArticle = () => {
 		togglePopup: toggleNewArticlePrompt,
 	} = usePopup();
 	const { user } = useAuthContext();
-	const { topic } = useParams();
+	const { category } = useParams();
 	const [title, setTitle] = useState('');
 	const [desc, setDesc] = useState('');
 
@@ -32,8 +32,8 @@ const NewArticle = () => {
 	const [imageBlob, setImageBlob] = useState<Blob | null>(null);
 	const [imagePreview, setImagePreview] = useState<string | null>(null);
 	const [imageUrl, setImageUrl] = useState<string | null>(null);
-	const [selectedTopic, setSelectedTopic] = useState('');
-	const { topics } = useTopicsContext();
+	const [selectedCategory, setSelectedCategory] = useState('');
+	const { categories } = useCategoriesContext();
 	const createArticle = async () => {
 		if (!user || loading) {
 			return;
@@ -59,15 +59,15 @@ const NewArticle = () => {
 		formData.append('adminId', user._id);
 		formData.append('title', title);
 		formData.append('description', desc);
-		formData.append('selected_topic', selectedTopic);
+		formData.append('selected_category', selectedCategory);
 		formData.append('uploaded_image', imageBlob as Blob);
 
 		await apiRequest({
-			url: `/api/topics/${topic}/create-article`,
+			url: `/api/categories/${category}/create-article`,
 			method: 'POST',
 			body: formData,
 			onSuccess: (response) => {
-				setSelectedTopic('');
+				setSelectedCategory('');
 				setSuccessful(true);
 				toast.success(response.message, {
 					icon: <FaCheck color="white" />,
@@ -82,7 +82,7 @@ const NewArticle = () => {
 			},
 			onError: (error) => {
 				setError(error);
-				setSelectedTopic('');
+				setSelectedCategory('');
 			},
 			onFinally: () => {
 				setLoading(false);
@@ -117,10 +117,10 @@ const NewArticle = () => {
 		setImageUrl(null);
 	};
 	const {
-		isVisible: topicPromptVisible,
-		isActive: topicPrompt,
-		togglePopup: toggleTopicPrompt,
-		ref: topicPromptRef,
+		isVisible: categoryPromptVisible,
+		isActive: categoryPrompt,
+		togglePopup: toggleCategoryPrompt,
+		ref: categoryPromptRef,
 	} = usePopup();
 	const linkname = usePathname();
 	return (
@@ -162,8 +162,15 @@ const NewArticle = () => {
 							</div>
 							<div className="flex flex-col gap-2 items-center justify-center w-full">
 								{imagePreview ? (
-									// eslint-disable-next-line
-									<img src={imagePreview} alt="icon" className="w-full   " />
+									<div className="flex flex-col gap-1">
+										{/*eslint-disable-next-line */}
+										<img src={imagePreview} alt="icon" className="w-full   " />
+										{imageBlob?.size && (
+											<span className="text-white text-xs">
+												{(imageBlob?.size / (1024 * 1024)).toFixed(2) + ' MB'}
+											</span>
+										)}
+									</div>
 								) : (
 									<IoImageSharp className="text-9xl  text-silver object-cover" />
 								)}
@@ -174,38 +181,38 @@ const NewArticle = () => {
 									{imageUrl ? 'Choose another' : 'Select Image'}
 								</button>
 							</div>
-							{!linkname.startsWith('/admin/topics/') && (
+							{!linkname.startsWith('/admin/categories/') && (
 								<div
 									className="py-2 px-2 bg-deepBlue border border-grey radial  text-center text-sm flex items-center gap-1 rounded-sm relative cursor-pointer w-full justify-between"
-									onClick={toggleTopicPrompt}
+									onClick={toggleCategoryPrompt}
 								>
 									<span className="capitalize text-white">
-										Topic: {selectedTopic}
+										Category: {selectedCategory}
 									</span>{' '}
 									<FaAngleDown
 										className={`text-white ${
-											topicPrompt ? 'rotate-180' : ''
+											categoryPrompt ? 'rotate-180' : ''
 										} duration-150`}
 									/>
-									{topicPrompt && (
+									{categoryPrompt && (
 										<div
 											className={`flex flex-col bg-navy radial  shadow-lg w-full rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey z-20 ${
-												topicPromptVisible ? 'opacity-100' : 'opacity-0'
+												categoryPromptVisible ? 'opacity-100' : 'opacity-0'
 											}`}
-											ref={topicPromptRef}
+											ref={categoryPromptRef}
 										>
-											{topics &&
-												topics.map((data) => (
+											{categories &&
+												categories.map((data) => (
 													<button
 														key={data.title}
 														className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150  ${
-															selectedTopic === data.slug
+															selectedCategory === data.slug
 																? 'bg-deepBlue'
 																: 'hover:bg-deepBlue'
 														}`}
 														onClick={() => {
-															toggleTopicPrompt();
-															setSelectedTopic(data.slug);
+															toggleCategoryPrompt();
+															setSelectedCategory(data.slug);
 														}}
 													>
 														<span className="capitalize text-white">
@@ -228,6 +235,8 @@ const NewArticle = () => {
 								label="Title"
 								name="title"
 								errorContent="Title is required"
+								textarea
+								maxlength={80}
 							/>
 							<ClassicInput
 								value={desc}

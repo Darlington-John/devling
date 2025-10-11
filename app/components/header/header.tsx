@@ -9,7 +9,7 @@ import { motion } from 'motion/react';
 import { useAuthContext } from '../../context/auth-context';
 import ProfileDropdown from './profile-dropdown';
 import { usePathname } from 'next/navigation';
-import TopicsDropdown from './topics-dropdown';
+import CategoriesDropdown from './categories-dropdown';
 const Header = () => {
 	const { overlayOpen, setOverlayOpen, toggleAuthPopup, setCurrentAction } =
 		useUtilsContext();
@@ -30,16 +30,17 @@ const Header = () => {
 				<Link href="/">
 					<Image
 						src={logo}
-						alt="wefithost logo"
+						alt="devling logo"
 						className="w-[200px]  max-2xl:w-[140px]"
 					/>
 				</Link>
 
 				<div className="flex items-center gap-5 text-[20px] font-light max-2xl:text-base  max-xs:text-sm max-2xs:hidden">
-					<TopicsDropdown />
+					<CategoriesDropdown />
 					<Link
 						href="https://darlington-john.framer.website/"
 						className="link-style  text-silver "
+						target="_blank"
 					>
 						About me
 					</Link>

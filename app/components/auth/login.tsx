@@ -86,7 +86,7 @@ const Login = ({
 					Set or Forgot Password?
 				</button>
 				<div>
-					<span className="text-silver">New to WeFitHost Blog? </span>
+					<span className="text-silver">New to Devling blog? </span>
 
 					<button
 						className="text-blue hover:text-darkBlue"

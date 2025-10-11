@@ -83,11 +83,15 @@ const Footer = () => {
 			}`}
 		>
 			<div className="flex item   max-3xl:px-10 max-xs:px-5 max-lg:flex-col max-sm:px-5 justify-between items-center max-w-[1500px] mx-auto w-full">
-				<div className=" py-12   text-white shrink-0 flex flex-col max-xl:px-3 max-lg:border-none   max-sm:px-0">
+				<div className=" py-12 max-lg:py-5   text-white shrink-0 flex flex-col max-xl:px-0 max-lg:border-none   max-sm:px-0 max-lg:max-w-[600px] max-lg:w-full">
 					<div className=" flex flex-col gap-6 max-w-[500px]">
 						<div className="flex  flex-col gap-3">
-							<Image src={logo} className="invert" alt="wefithost logo" />
-							<p className="text-lg text-silver">
+							<Image
+								src={logo}
+								className="invert max-w-60"
+								alt="devling logo"
+							/>
+							<p className="text-lg text-silver max-md:text-sm">
 								A fun mix of food, travel, tech, and movies — I share stories,
 								tips, and discoveries that make everyday life a little more
 								exciting.
@@ -104,10 +108,16 @@ const Footer = () => {
 								</Link>
 							))}
 						</div>
+						<div className="flex gap-3 items-center  text-white">
+							<span className=" text-sm font-light">
+								© {new Date().getFullYear()} Devling by Darlington John. All
+								rights reserved
+							</span>
+						</div>
 					</div>
 				</div>
 
-				<section className="relative h-[400px] p-10 overflow-hidden max-2xs:p-5  ">
+				<section className="relative h-[400px] p-10 overflow-hidden max-lg:p-5 max-lg:h-auto max-md:px-0">
 					<div className="flex gap-10 w-full flex-col relative items-center justify-center max-w-[1400px] h-full mx-auto z-[30]">
 						<div className=" flex items-center w-full">
 							<div className="flex flex-col gap-3 relative z-30 self-end w-full">
@@ -115,7 +125,7 @@ const Footer = () => {
 									Subscribe to my newsletter
 								</h2>
 								<p className="max-w-[600px] text-silver text-base font-semibold max-lg:text-sm max-sm:font-normal">
-									Love what you read? Subscribe to our newsletter and get fresh
+									Love what you read? Subscribe to my newsletter and get fresh
 									stories on food, travel, tech, and movies straight to your
 									inbox!
 								</p>

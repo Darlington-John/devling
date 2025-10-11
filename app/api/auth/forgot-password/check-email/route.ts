@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
 	<tr>
 		<td align="center" style="padding-bottom: 10px">
 			<img
-				src="https://res.cloudinary.com/dl6pa30kz/image/upload/v1756039608/logo_hdvqjb_1_1_u8ljxj.png"
+				src="https://res.cloudinary.com/dycw73vuy/image/upload/v1760176571/Screenshot_2025-10-05_at_9.26.29_PM-removebg-preview_deooob.png"
 				style="width: 150px"
 			/>
 		</td>
@@ -84,10 +84,10 @@ export async function POST(req: NextRequest) {
 	<tr>
 		<td align="start" style="padding-top: 20px">
 			<p style="font-size: 14px; color: gray; margin: 0">
-				© wefithost.${new Date()}
+				©Devling.${new Date()}
 			</p>
 			<p style="font-size: 12px; color: gray">
-				You’re receiving this email from WeFitHost.
+				You’re receiving this email from Darlington John.
 			</p>
 		</td>
 	</tr>

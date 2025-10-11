@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectMongo from '~/lib/connect-mongo';
 import Article from '~/lib/models/article';
-import '~/lib/models/topic'; // ensures Topic model is registered
+import '~/lib/models/category'; // ensures Category model is registered
 import '~/lib/models/user';
 import { getReadingTime } from '~/utils/get-reading-time';
 export async function GET(req: NextRequest) {
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
 			rawArticles = await Article.find({})
 				.limit(9)
 				.populate({
-					path: 'topic',
+					path: 'category',
 					select: 'title',
 				})
 				.populate({
@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
 			rawArticles = await Article.find({ published: true, featured: true })
 				.limit(9)
 				.populate({
-					path: 'topic',
+					path: 'category',
 					select: 'title',
 				})
 				.populate({

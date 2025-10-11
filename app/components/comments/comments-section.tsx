@@ -13,7 +13,7 @@ import { apiRequest } from '~/utils/api-request';
 import { toast } from 'react-toastify';
 
 const CommentsSection = () => {
-	const { topic, article } = useParams();
+	const { category, article } = useParams();
 	const [comment, setComment] = useState('');
 	const [commentError, setCommentError] = useState('');
 	const [commenting, setCommenting] = useState(false);
@@ -32,7 +32,7 @@ const CommentsSection = () => {
 		setCommentError('');
 		setCommenting(true);
 		await apiRequest({
-			url: `/api/topics/${topic}/${article}/comments/comment`,
+			url: `/api/categories/${category}/${article}/comments/comment`,
 			method: 'POST',
 			body: { comment, userId: user?._id, parentId: null },
 			onSuccess: (response) => {
@@ -56,7 +56,7 @@ const CommentsSection = () => {
 		error,
 		refetch,
 	} = useFetch<comment_type[]>({
-		basePath: `/api/topics/${topic}/${article}/comments/fetch-comments`,
+		basePath: `/api/categories/${category}/${article}/comments/fetch-comments`,
 		ids: [],
 		eventKey: 'commentsUpdated',
 		dataKey: 'result',
@@ -65,7 +65,9 @@ const CommentsSection = () => {
 	});
 	return (
 		<aside className="flex flex-col gap-3 w-full ">
-			<h3 className="text-2xl poppins-bold max-md:text-xl text-fade-blue">Comments</h3>
+			<h3 className="text-2xl poppins-bold max-md:text-xl text-fade-blue">
+				Comments
+			</h3>
 			<div className="flex flex-col gap-1">
 				<div className="flex items-center gap-2">
 					<ClassicInput
@@ -73,7 +75,6 @@ const CommentsSection = () => {
 						setValue={setComment}
 						errorContent="Comment is required"
 						placeholder="Add a comment..."
-					
 						error={commentError}
 						setError={setCommentError}
 					/>

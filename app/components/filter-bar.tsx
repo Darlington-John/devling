@@ -1,7 +1,7 @@
 'use client';
 
 import { SetStateAction } from 'react';
-import { ITopic } from '~/types/topic';
+import { ICategory } from '~/types/category';
 interface filterProps {
 	activeFilter?: string;
 	setActiveFilter?: React.Dispatch<SetStateAction<string>>;
@@ -9,7 +9,7 @@ interface filterProps {
 	setSearchTerm?: React.Dispatch<SetStateAction<string>>;
 	selectedSort?: string;
 	setSelectedSort?: React.Dispatch<SetStateAction<string>>;
-	topics: ITopic[] | null;
+	categories: ICategory[] | null;
 	showFilters: boolean;
 }
 const FilterBar = ({
@@ -19,7 +19,7 @@ const FilterBar = ({
 	setSearchTerm,
 	selectedSort,
 	setSelectedSort,
-	topics,
+	categories,
 	showFilters,
 }: filterProps) => {
 	const handleSearchChange = (
@@ -48,8 +48,8 @@ const FilterBar = ({
 						>
 							all
 						</button>
-						{topics &&
-							topics.map((data) => (
+						{categories &&
+							categories.map((data) => (
 								<button
 									key={data._id}
 									onClick={() => setActiveFilter?.(data._id)}
@@ -59,7 +59,7 @@ const FilterBar = ({
 											: 'hover:bg-grey'
 									}`}
 									role="group"
-									aria-label="Filter articles by topic"
+									aria-label="Filter articles by category"
 								>
 									{data?.title}
 								</button>
@@ -104,5 +104,4 @@ pr-8
 };
 
 export default FilterBar;
-
 

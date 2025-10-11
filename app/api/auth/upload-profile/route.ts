@@ -35,7 +35,7 @@ export async function PATCH(req: NextRequest) {
 		const uploadResult = await new Promise<{ secure_url: string }>(
 			(resolve, reject) => {
 				const uploadStream = cloudinary.v2.uploader.upload_stream(
-					{ folder: 'wefithost_blog_profiles' },
+					{ folder: 'devling_blog_profiles' },
 					(error, result) => {
 						if (error) {
 							reject(new Error(error.message || 'Upload failed'));

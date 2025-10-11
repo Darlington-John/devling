@@ -76,9 +76,9 @@ const EditArticlePrompt = ({
 		formData.append('description', desc);
 		formData.append('uploaded_image', imageBlob as Blob);
 		formData.append('article_id', articleToEdit?._id);
-		formData.append('topic', articleToEdit?.topic.title);
+		formData.append('category', articleToEdit?.category.title);
 		await apiRequest({
-			url: '/api/topics/edit-article',
+			url: '/api/categories/edit-article',
 			method: 'PATCH',
 			body: formData,
 			onSuccess: (response) => {

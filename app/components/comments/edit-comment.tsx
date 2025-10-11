@@ -26,7 +26,7 @@ const EditComment = ({
 	comment,
 }: PopupPrompt) => {
 	const { user } = useAuthContext();
-	const { topic, article } = useParams();
+	const { category, article } = useParams();
 	const [commentEdit, setCommentEdit] = useState(comment?.comment || '');
 
 	const [error, setError] = useState('');
@@ -44,7 +44,7 @@ const EditComment = ({
 		setError('');
 		setDisable(true);
 		await apiRequest({
-			url: `/api/topics/${topic}/${article}/comments/edit-comment`,
+			url: `/api/categories/${category}/${article}/comments/edit-comment`,
 			method: 'PATCH',
 			body: { userId: user?._id, commentEdit, commentId: comment?._id },
 			onSuccess: (response) => {

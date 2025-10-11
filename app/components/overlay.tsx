@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useUtilsContext } from '~/app/context/utils-context';
 import Link from 'next/link';
 import { Accordion } from './accordion';
-import { useTopicsContext } from '../context/topics-context';
+import { useCategoriesContext } from '../context/categories-context';
 interface link {
 	header: string;
 	link: {
@@ -27,42 +27,37 @@ const Overlay = () => {
 
 		setOverlayOpen(false);
 	}, [linkname, setOverlayOpen]);
-	const { topics } = useTopicsContext();
+	const { categories } = useCategoriesContext();
 	const footerLink = [
 		{
-			header: 'Topics',
-			link: topics?.map((topic) => ({
-				dir: topic.title,
-				href: `/topics/${topic.slug}`, // or just topic.slug if you don’t need the `/`
+			header: 'Categories',
+			link: categories?.map((category) => ({
+				dir: category.title,
+				href: `/categories/${category.slug}`, // or just category.slug if you don’t need the `/`
 			})),
 		},
 	];
 	return (
 		<div
-			className=" hidden w-full  fixed z-40 top-0 right-0 bg-white  max-md:flex      flex-col gap-16 justify-end   ease-out duration-[0.4s]  h-full text-[#000]  "
+			className=" hidden w-full  fixed z-40 top-0 right-0 bg-navy   max-md:flex      flex-col gap-16 justify-end   ease-out duration-[0.4s]  h-full text-white  "
 			id="overlay"
 			style={{ transform: 'translateY(-100%)' }}
 		>
 			<div className=" w-full  py-4   h-full mt-[57px]     flex flex-col  overflow-auto  gap-2 ">
-				{topics && topics.length > 0 && (
+				{categories && categories.length > 0 && (
 					<Accordion
 						links={footerLink as link[]}
-						accordion_class_override="!text-black !text-base !border-lightGrey !px-5 !uppercase"
-						arrow_class_override="!border-black"
+						accordion_class_override="!text-fade-blue !text-base !border-fade-blue !px-5 !uppercase"
+						arrow_class_override="!border-silver"
 					/>
 				)}
 
 				<Link
-					href="https://wefithost.com/contact-us"
-					className="text-base uppercase py-4 px-6 border-b border-lightGrey"
+					href="https://darlington-john.framer.website/"
+					className="text-base uppercase py-4 px-6 text-fade-blue"
+					target="_blank"
 				>
-					Contact us
-				</Link>
-				<Link
-					href="https://www.wefithost.com/"
-					className="text-base uppercase py-4 px-6 border-b border-lightGrey"
-				>
-					Visit WeFitHost
+					About Me
 				</Link>
 			</div>
 		</div>

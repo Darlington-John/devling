@@ -25,7 +25,7 @@ const DeleteComment = ({
 	comment,
 }: PopupPrompt) => {
 	const { user } = useAuthContext();
-	const { topic, article } = useParams();
+	const { category, article } = useParams();
 
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -39,7 +39,7 @@ const DeleteComment = ({
 		setError('');
 		setDisable(true);
 		await apiRequest({
-			url: `/api/topics/${topic}/${article}/comments/delete-comment`,
+			url: `/api/categories/${category}/${article}/comments/delete-comment`,
 			method: 'DELETE',
 			body: { userId: user?._id, commentId: comment?._id },
 			onSuccess: (response) => {

@@ -10,7 +10,7 @@ import Overlay from './components/overlay';
 import AuthPrompt from './components/auth/auth';
 import { AuthProvider } from './context/auth-context';
 import { NextAuthProvider } from './next-auth-provider';
-import { TopicsProvider } from './context/topics-context';
+import { CategoriesProvider } from './context/categories-context';
 import Script from 'next/script';
 import UpdateIp from './components/update-ip';
 import { Analytics } from '@vercel/analytics/next';
@@ -28,24 +28,35 @@ const PoppinsBold = localFont({
 	variable: '--font-poppinsextra',
 });
 export const metadata: Metadata = {
-	title: 'Devling Blog – A fun mix of food, travel, tech, and movies',
+	title: 'Travel, Tech & Movie Stories That Inspire Everyday Life',
 	alternates: {
-		canonical: 'https://devling.vercel.app/',
+		canonical: 'https://devling.vercel.app',
 	},
+	keywords: [
+		'Devling',
+		'Devling Blog',
+		'Travel Blog',
+		'Tech Blog',
+		'Darlington John',
+		'Darlington',
+		'Movies Blog',
+		'Blog in Nigeria',
+		'Freelancer',
+	],
 	description:
-		'WeFitHost Blog shares tips, updates, and insights on hosting, site management, and digital tools to help you build smarter, faster, and safer online.',
+		'Discover articles on travel, tech, and movies at Devling Blog — your one-stop spot for tasty reads, travel inspo, and film reviews!',
 	openGraph: {
-		title: 'WefitHost Blog',
+		title: 'Devling Blog',
 		description:
-			'WeFitHost Blog shares tips, updates, and insights on hosting, site management, and digital tools to help you build smarter, faster, and safer online.',
-		url: 'https://res.cloudinary.com/dl6pa30kz/image/upload/v1757335730/weFitHost-blog_vqp2he.png',
-		siteName: 'WefitHost Blog',
+			'Discover articles on travel, tech, and movies at Devling Blog — your one-stop spot for tasty reads, travel inspo, and film reviews!',
+		url: 'https://res.cloudinary.com/dycw73vuy/image/upload/v1760173027/Screenshot_2025-10-11_at_9.55.25_AM_c8ajaz.png',
+		siteName: 'Devling Blog',
 		images: [
 			{
-				url: 'https://res.cloudinary.com/dl6pa30kz/image/upload/v1757335730/weFitHost-blog_vqp2he.png', // your OG image
+				url: 'https://res.cloudinary.com/dycw73vuy/image/upload/v1760173027/Screenshot_2025-10-11_at_9.55.25_AM_c8ajaz.png', // your OG image
 				width: 1200,
 				height: 630,
-				alt: 'WefitHost Blog Cover',
+				alt: 'Devling Blog Cover',
 			},
 		],
 		locale: 'en_US',
@@ -53,11 +64,11 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'WefitHost Blog',
+		title: 'Devling Blog',
 		description:
-			'Tips, updates, and insights on hosting, site management, and digital tools.',
+			'Discover articles on travel, tech, and movies at Devling Blog — your one-stop spot for tasty reads, travel inspo, and film reviews!',
 		images: [
-			'https://res.cloudinary.com/dl6pa30kz/image/upload/v1757335730/weFitHost-blog_vqp2he.png',
+			'https://res.cloudinary.com/dycw73vuy/image/upload/v1760173027/Screenshot_2025-10-11_at_9.55.25_AM_c8ajaz.png',
 		], // can reuse OG image
 	},
 };
@@ -94,7 +105,7 @@ export default function RootLayout({
 				<NextAuthProvider>
 					<ToastContainer position="bottom-right" closeButton={false} />
 					<UtilsProvider>
-						<TopicsProvider>
+						<CategoriesProvider>
 							<AuthProvider>
 								<UpdateIp />
 								<Header />
@@ -104,7 +115,7 @@ export default function RootLayout({
 								<Analytics />
 								<Footer />
 							</AuthProvider>
-						</TopicsProvider>
+						</CategoriesProvider>
 					</UtilsProvider>
 				</NextAuthProvider>
 			</body>

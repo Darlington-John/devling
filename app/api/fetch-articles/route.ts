@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import connectMongo from '~/lib/connect-mongo';
 import Article from '~/lib/models/article';
-import '~/lib/models/topic'; // ensures Topic model is registered
+import '~/lib/models/category'; // ensures Category model is registered
 import '~/lib/models/user';
 import { getReadingTime } from '~/utils/get-reading-time';
 
@@ -30,8 +30,9 @@ export async function GET(req: NextRequest) {
 			};
 		}
 		if (filterParam && filterParam !== 'all') {
-			const topics = filterParam.split(',');
-			filter.topic = topics.length > 1 ? { $in: topics } : topics[0];
+			const categories = filterParam.split(',');
+			filter.category =
+				categories.length > 1 ? { $in: categories } : categories[0];
 		}
 
 		const baseFilter = admin ? {} : { published: true };
@@ -41,7 +42,7 @@ export async function GET(req: NextRequest) {
 		const rawArticles = await Article.find(finalFilter)
 			.skip(skip)
 			.limit(limit)
-			.populate({ path: 'topic', select: 'title' })
+			.populate({ path: 'category', select: 'title' })
 			.populate({ path: 'author', select: 'profile first_name last_name' })
 			.sort({ createdAt: sortOrder })
 			.lean();

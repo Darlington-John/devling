@@ -14,8 +14,8 @@ const Sidebar = ({ hidden }: SidebarProps) => {
 	const menuList = [
 		{
 			id: 1,
-			dir: 'Topics',
-			href: '/admin/topics',
+			dir: 'Categories',
+			href: '/admin/categories',
 			icon: <MdArticle className="text-fade-blue" />,
 			activeIcon: <MdArticle className="text-blue" />,
 		},

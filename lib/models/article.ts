@@ -4,7 +4,7 @@ interface IArticle extends Document {
 	image: string;
 	slug: string;
 	title: string;
-	topic: Types.ObjectId;
+	category: Types.ObjectId;
 
 	description: string;
 	article: JSONContent;
@@ -16,7 +16,7 @@ interface IArticle extends Document {
 const ArticleSchema = new Schema<IArticle>(
 	{
 		title: { type: String, required: true },
-		topic: { type: Schema.Types.ObjectId, ref: 'Topic', required: true },
+		category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
 		author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 		description: { type: String, required: true },
 		image: { type: String, required: true },

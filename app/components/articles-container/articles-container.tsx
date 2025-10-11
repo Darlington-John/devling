@@ -3,7 +3,7 @@ import FilterBar from '../filter-bar';
 import React from 'react';
 import EmptyState from '../empty-state';
 import { IArticle } from '~/types/article';
-import { useTopicsContext } from '../../context/topics-context';
+import { useCategoriesContext } from '../../context/categories-context';
 import { ArticleGrid } from './articles-grid';
 import Loader from '../loader';
 
@@ -43,7 +43,7 @@ const ArticlesContainer = ({
 	fetching,
 	error,
 }: containerProps) => {
-	const { topics } = useTopicsContext();
+	const { categories } = useCategoriesContext();
 
 	const hasArticles = pagedArticles && pagedArticles.length > 0;
 	const hasSearch = searchTerm && searchTerm.trim().length > 0;
@@ -65,7 +65,7 @@ const ArticlesContainer = ({
 						setSearchTerm={setSearchTerm}
 						selectedSort={selectedSort as string}
 						setSelectedSort={setSelectedSort}
-						topics={topics}
+						categories={categories}
 						showFilters={showFilters}
 					/>
 				</div>
@@ -94,7 +94,7 @@ const ArticlesContainer = ({
 						<EmptyState message={`No articles found for “${searchTerm}”`} />
 					)
 				) : isFiltered ? (
-					// Topic filter (handled on backend now)
+					// Category filter (handled on backend now)
 					hasArticles ? (
 						<ArticleGrid
 							articles={pagedArticles}

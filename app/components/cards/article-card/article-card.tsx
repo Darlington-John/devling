@@ -52,10 +52,10 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 				<Link
 					href={
 						admin
-							? `/admin/topics/${slugify(article?.topic?.title)}/${
+							? `/admin/categories/${slugify(article?.category?.title)}/${
 									slugify(article?.title) || ''
 							  }`
-							: `/topics/${slugify(article?.topic?.title) || ''}/${
+							: `/categories/${slugify(article?.category?.title) || ''}/${
 									slugify(article?.title) || ''
 							  }`
 					}
@@ -81,7 +81,7 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 
 									{adminPrompt && (
 										<div
-											className={`flex  flex-col bg-navy radial shadow-lg  w-[130px] rounded-md   duration-150 absolute top-0 right-[100%] divide-y divide-grey overflow-hidden border border-grey z-20   ${
+											className={`flex  flex-col bg-navy radial shadow-lg  w-[150px] rounded-md   duration-150 absolute top-0 right-[100%] divide-y divide-grey overflow-hidden border border-grey z-20   ${
 												adminPromptVisible ? 'opacity-100' : 'opacity-0 '
 											}`}
 											ref={adminPromptRef}
@@ -148,7 +148,7 @@ const ArticleCard = ({ article, admin = false }: articleProps) => {
 									<span>{article?.duration || '2'} mins read</span>
 								</div>
 								<button className="bg-blue h-[30px] cursor-none duration-150 px-3 text-white text-sm rounded-sm font-semibold max-2xs:h-[30px] max-2xs:px-2  max-2xs:text-xs max-2xs:top-3 max-2xs:left-3 ">
-									{article?.topic.title}
+									{article?.category.title}
 								</button>
 							</div>
 							<h3 className="text-lg poppins-bold line-clamp-2 max-2xs:text-base article-header text-fade-blue">

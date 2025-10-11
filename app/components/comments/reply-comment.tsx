@@ -27,7 +27,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 	const [replied, setReplied] = useState(false);
 	const [replyError, setReplyError] = useState('');
 	const [reply, setReply] = useState('');
-	const { topic, article } = useParams();
+	const { category, article } = useParams();
 	const [isOpen, setIsOpen] = useState(false);
 	const { contentRef, height } = useAccordion(isOpen);
 	const {
@@ -76,7 +76,7 @@ const ReplyComment = ({ comment }: replyProps) => {
 
 		setReplyError('');
 		await apiRequest({
-			url: `/api/topics/${topic}/${article}/comments/comment`,
+			url: `/api/categories/${category}/${article}/comments/comment`,
 			method: 'POST',
 			body: {
 				parentId: commentId,
@@ -245,7 +245,4 @@ const ReplyComment = ({ comment }: replyProps) => {
 };
 
 export default ReplyComment;
-
-
-
 

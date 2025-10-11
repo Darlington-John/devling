@@ -28,7 +28,7 @@ const DeleteArticlePrompt = ({
 	const [loading, setLoading] = useState(false);
 	const [successful, setSuccessful] = useState(false);
 
-	const deleteTopic = async () => {
+	const deleteCategory = async () => {
 		if (!user) {
 			return;
 		}
@@ -41,7 +41,7 @@ const DeleteArticlePrompt = ({
 		setDisable(true);
 
 		await apiRequest({
-			url: '/api/topics/delete-article',
+			url: '/api/categories/delete-article',
 			method: 'DELETE',
 			body: { articleId, adminId: user?._id },
 			onSuccess: (response) => {
@@ -96,7 +96,7 @@ const DeleteArticlePrompt = ({
 							action="Delete"
 							loading={loading}
 							success={successful}
-							onClick={deleteTopic}
+							onClick={deleteCategory}
 						/>
 						<button
 							className="bg-gray-600 text-center w-full  hover:outline outline-gray-500   !rounded-md text-sm text-white duration-150"

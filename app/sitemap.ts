@@ -6,27 +6,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	await connectMongo();
 
 	const articles = await Article.find({ published: true })
-		.populate({ path: 'topic', select: 'slug' })
+		.populate({ path: 'category', select: 'slug' })
 		.lean();
 
-	const uniqueTopics = [
+	const uniqueCategories = [
 		// @ts-expect-error: it's defined
-		...new Set((articles || []).map((a) => a?.topic?.slug).filter(Boolean)),
+		...new Set((articles || []).map((a) => a?.category?.slug).filter(Boolean)),
 	];
 
 	const articleUrls =
 		(articles || [])
 			// @ts-expect-error: it's defined
-			.filter((a) => a?.topic?.slug && a?.slug)
+			.filter((a) => a?.category?.slug && a?.slug)
 			.map((article) => ({
 				// @ts-expect-error: it's defined
-				url: `https://devling.vercel.app/topics/${article.topic.slug}/${article.slug}`,
+				url: `https://devling.vercel.app/categories/${article.category.slug}/${article.slug}`,
 				// @ts-expect-error: it's defined
 				lastModified: new Date(article.updatedAt),
 			})) ?? [];
 
-	const topicUrls = uniqueTopics.map((slug) => ({
-		url: `https://devling.vercel.app/topics/${slug}`,
+	const categoryUrls = uniqueCategories.map((slug) => ({
+		url: `https://devling.vercel.app/categories/${slug}`,
 		lastModified: new Date(),
 	}));
 
@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			lastModified: new Date(),
 		},
 		...articleUrls,
-		...topicUrls,
+		...categoryUrls,
 	];
 }
 

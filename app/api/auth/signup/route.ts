@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
 			...mailOptions,
 			to: email,
 			text: 'Hello. This mail is for your email verification.',
-			subject: 'Welcome to WeFitHost blog,Verify Your Email',
+			subject: 'Welcome to Devling blog,Verify Your Email',
 			html: `<table
 	style="
 		background-color: #fbfbff;
@@ -76,9 +76,9 @@ export async function POST(req: NextRequest) {
 	<tr>
 		<td align="center" style="padding-bottom: 10px">
 			<img
-				src="https://res.cloudinary.com/dl6pa30kz/image/upload/v1756039608/logo_hdvqjb_1_1_u8ljxj.png"
+				src="https://res.cloudinary.com/dycw73vuy/image/upload/v1760176571/Screenshot_2025-10-05_at_9.26.29_PM-removebg-preview_deooob.png"
 				style="width: 150px"
-				alt="wefithost logo"
+				alt="devling logo"
 			/>
 		</td>
 	</tr>
@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
 					margin: 0 0 20px 0;
 				"
 			>
-				Thanks for signing up with wefithost blog! Before you get started, we
+				Thanks for signing up with Devling blog! Before you get started, we
 				need you to confirm your email address. Please copy this number below to
 				complete your signup.
 			</p>
@@ -116,10 +116,10 @@ export async function POST(req: NextRequest) {
 	<tr>
 		<td align="start" style="padding-top: 20px">
 			<p style="font-size: 14px; color: gray; margin: 0">
-				© wefithost. ${new Date()}
+				©devling. ${new Date()}
 			</p>
 			<p style="font-size: 12px; color: gray">
-				You’re receiving this email from wefithost.
+				You’re receiving this email from Darlington John.
 			</p>
 		</td>
 	</tr>

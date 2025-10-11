@@ -73,9 +73,9 @@ const actionOptions = [
 	{ key: 'article_unpublished', label: 'Article unpublished' },
 	{ key: 'article_featured', label: 'Article featured' },
 	{ key: 'article_unfeatured', label: 'Article unfeatured' },
-	{ key: 'topic_created', label: 'Topic created' },
-	{ key: 'topic_deleted', label: 'Topic deleted' },
-	{ key: 'topic_edited', label: 'Topic edited' },
+	{ key: 'category_created', label: 'Category created' },
+	{ key: 'category_deleted', label: 'Category deleted' },
+	{ key: 'category_edited', label: 'Category edited' },
 	{ key: 'comment_created', label: 'Comment created' },
 	{ key: 'comment_deleted', label: 'Comment deleted' },
 	{ key: 'comment_edited', label: 'Comment edited' },
@@ -137,7 +137,7 @@ const LogsFilter = ({
 							<button
 								key={key}
 								className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150 ${
-									activeStatus === key ?'bg-deepBlue' : 'hover:bg-grey'
+									activeStatus === key ? 'bg-deepBlue' : 'hover:bg-grey'
 								}`}
 								onClick={() => {
 									toggleStatusPrompt();
@@ -162,12 +162,12 @@ const LogsFilter = ({
 				/>
 				{rolePrompt && (
 					<div
-						className={`flex flex-col bg-navy radial shadow-lg w-[130px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey z-20 ${
+						className={`flex flex-col bg-navy radial shadow-lg w-[150px] rounded-md duration-150 absolute top-[105%] right-0 divide-y divide-grey overflow-hidden border border-grey z-20 ${
 							rolePromptVisible ? 'opacity-100' : 'opacity-0'
 						}`}
 						ref={rolePromptRef}
 					>
-						{roleOptions.map(({ key, label}) => (
+						{roleOptions.map(({ key, label }) => (
 							<button
 								key={key}
 								className={`py-2 w-full text-[13px] flex items-center gap-3 px-3 duration-150  text-silver ${

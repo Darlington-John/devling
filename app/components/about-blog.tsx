@@ -1,4 +1,3 @@
-
 import { FaEnvelope } from 'react-icons/fa';
 import ClassicInput from './inputs/classic-input';
 import { useState } from 'react';
@@ -154,7 +153,7 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 								</h5>
 								<p className="text-sm text-gray-600">
 									We publish high-quality, in-depth content on a wide range of
-									topics critical to your online journey:
+									categories critical to your online journey:
 								</p>
 								<ul className="list-disc list-inside flex flex-col gap-1">
 									<li className="text-base max-2xs:text-[15px]">
@@ -254,5 +253,4 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 };
 
 export default AboutBlog;
-
 

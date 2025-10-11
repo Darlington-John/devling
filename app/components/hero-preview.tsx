@@ -83,7 +83,7 @@ const HeroPreview = ({ articles }: previewProps) => {
 					<span>{article?.duration || '2'} mins read</span>
 				</div>
 				<Link
-					href={`/topics/${slugify(article?.topic?.title)}/${slugify(
+					href={`/categories/${slugify(article?.category?.title)}/${slugify(
 						article?.title as string,
 					)}`}
 					onMouseEnter={() => setIsHovered(true)}
@@ -103,7 +103,7 @@ const backup_data = [
 	{
 		_id: '68aee7332d1722a1a2f99b38',
 		title: 'How to Scale Your Reseller Hosting Business',
-		topic: {
+		category: {
 			_id: '68aee2f52d1722a1a2f99ae5',
 			title: 'hosting',
 		},
@@ -130,7 +130,7 @@ const backup_data = [
 	{
 		_id: '68aef3ee2d1722a1a2f99c92',
 		title: 'Hosting Business Marketing Strategies',
-		topic: {
+		category: {
 			_id: '68aee5412d1722a1a2f99b01',
 			title: 'business',
 		},
@@ -157,7 +157,7 @@ const backup_data = [
 	{
 		_id: '68aef8922d1722a1a2f99d05',
 		title: 'Shared Hosting vs. VPS: Which Is More Secure?',
-		topic: {
+		category: {
 			_id: '68aee4202d1722a1a2f99af3',
 			title: 'security',
 		},
@@ -184,7 +184,7 @@ const backup_data = [
 	{
 		_id: '68aeff8d2d1722a1a2f99d8d',
 		title: 'Tips for Building Rich SEO: A Complete Guide to Ranking Higher',
-		topic: {
+		category: {
 			_id: '68aee37c2d1722a1a2f99aec',
 			title: 'tips',
 		},
@@ -211,7 +211,7 @@ const backup_data = [
 	{
 		_id: '68af085c2d1722a1a2f99e6c',
 		title: 'Dedicated Hosting Explained: Is It Worth the Cost?',
-		topic: {
+		category: {
 			_id: '68aee2f52d1722a1a2f99ae5',
 			title: 'hosting',
 		},
