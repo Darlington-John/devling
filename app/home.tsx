@@ -56,14 +56,13 @@ export default function Home() {
 			<div className="min-h-screen w-full py-8 gap-16 flex flex-col  max-w-[1500px] max-2xl:py-6 max-2xl:gap-10 mx-auto   max-2xl:px-10 max-xs:px-5 max-4xl:px-10">
 				<FeaturedArticlesPreview />
 				<section className="flex flex-col gap-4 max-w-[1500px]  w-full">
-					<h1 className="text-4xl poppins-bold max-2xl:text-3xl max-xs:text-2xl text-fade-blue ">
-						Devling Blog – Hosting Tips and Web Insights
+					<h1 className="text-4xl poppins-bold max-2xl:text-3xl max-xs:text-2xl text-fade-blue max-w-[800px]">
+						Devling Blog – Travel, Tech & Movie articles that inspire everyday
+						life
 					</h1>
 					<h2 className="text-lg max-2xl:text-base max-w-[800px] max-2xs:text-sm text-silver">
-						Devling Blog brings you the latest tips, updates, and insights on
-						web hosting, website management, and digital tools — helping
-						individuals and businesses build faster, smarter, and more secure
-						online experiences
+						Discover articles on travel, tech, and movies at Devling Blog — your
+						one-stop spot for tasty reads, travel inspo, and film reviews!
 					</h2>
 				</section>
 

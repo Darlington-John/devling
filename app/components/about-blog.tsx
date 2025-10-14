@@ -1,4 +1,4 @@
-import { FaEnvelope } from 'react-icons/fa';
+import { FaCheckCircle, FaEnvelope } from 'react-icons/fa';
 import ClassicInput from './inputs/classic-input';
 import { useState } from 'react';
 import { apiRequest } from '~/utils/api-request';
@@ -11,7 +11,6 @@ interface aboutProps {
 }
 const AboutBlog = ({ className_override }: aboutProps) => {
 	const [email, setEmail] = useState('');
-
 	const [subscribing, setSubscribing] = useState(false);
 	const [error, setError] = useState('');
 	const [subscribeSuccess, setSubscribeSuccess] = useState(false);
@@ -34,13 +33,14 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 		}
 		setSubscribing(true);
 		setError('');
-
 		await apiRequest({
 			url: '/api/subscribe',
 			method: 'POST',
 			body: { email },
 			onSuccess: (res) => {
-				toast.success(res.message);
+				toast.success(res.message, {
+					icon: <FaCheckCircle className="text-white text-2xl" />,
+				});
 				setSubscribeSuccess(true);
 				setTimeout(() => setSubscribeSuccess(true), 3000);
 			},
@@ -73,27 +73,31 @@ const AboutBlog = ({ className_override }: aboutProps) => {
 					<p className="text-center text-silver">
 						Get the latest hosting tips and business insights
 					</p>
+					<div className="flex flex-col gap-1 w-full">
+						<div className="flex gap-2 flex-col w-full items-start justify-start">
+							<ClassicInput
+								value={email}
+								setValue={setEmail}
+								error={error}
+								setError={setError}
+								classname_override="!w-full !self-start"
+								errorContent={'Please enter a valid email address'}
+								placeholder="Your email"
+								name="email"
+							/>
 
-					<div className="flex gap-2 flex-col w-full items-start justify-start">
-						<ClassicInput
-							value={email}
-							setValue={setEmail}
-							error={error}
-							setError={setError}
-							classname_override="!w-full !self-start"
-							errorContent={'Please enter a valid email address'}
-							placeholder="Your email"
-						/>
-
-						<AsyncButton
-							action="Subscribe"
-							classname_override="!w-full"
-							loading={subscribing}
-							success={subscribeSuccess}
-							disabled={!email}
-							onClick={subscribe}
-						/>
+							<AsyncButton
+								action="Subscribe"
+								classname_override="!w-full"
+								loading={subscribing}
+								success={subscribeSuccess}
+								disabled={!email}
+								onClick={subscribe}
+							/>
+						</div>
+						{error && <p className="text-sm text-red-300">{error}</p>}
 					</div>
+
 					<span className="text-xs text-silver">
 						I&apos;ll never share your email. Unsubscribe anytime.
 					</span>

@@ -19,14 +19,14 @@ export async function POST(req: NextRequest) {
 		const isSubscribed = await NewsletterSubscription.findOne({ email: email });
 		if (isSubscribed) {
 			return NextResponse.json(
-				{ error: 'The email has already been subscribed to our newsletter' },
+				{ error: 'The email has already been subscribed to my newsletter' },
 				{ status: 409 },
 			);
 		}
 
 		await NewsletterSubscription.create({ email: email });
 		return NextResponse.json(
-			{ message: 'Thanks for subscribing to our newsletter' },
+			{ message: 'Thanks for subscribing to my newsletter' },
 			{ status: 200 },
 		);
 	} catch (error) {

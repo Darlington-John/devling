@@ -102,9 +102,8 @@ const Footer = () => {
 								alt="devling logo"
 							/>
 							<p className="text-lg text-silver max-md:text-sm">
-								A fun mix of food, travel, tech, and movies — I share stories,
-								tips, and discoveries that make everyday life a little more
-								exciting.
+								A fun mix of travel, tech, and movies — I share stories, tips,
+								and discoveries that make everyday life a little more exciting.
 							</p>
 						</div>
 						<div className="flex  items-center gap-4">
@@ -136,8 +135,7 @@ const Footer = () => {
 								</h2>
 								<p className="max-w-[600px] text-silver text-base font-semibold max-lg:text-sm max-sm:font-normal">
 									Love what you read? Subscribe to my newsletter and get fresh
-									stories on food, travel, tech, and movies straight to your
-									inbox!
+									stories on travel, tech, and movies straight to your inbox!
 								</p>
 							</div>
 						</div>
