@@ -3,7 +3,13 @@ import Link from 'next/link';
 
 import { usePathname } from 'next/navigation';
 import logo from '~/public/icons/logo.svg';
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import {
+	FaCheckCircle,
+	FaFacebook,
+	FaGithub,
+	FaInstagram,
+	FaLinkedin,
+} from 'react-icons/fa';
 import Image from 'next/image';
 import { useState } from 'react';
 import { apiRequest } from '~/utils/api-request';
@@ -64,7 +70,9 @@ const Footer = () => {
 			method: 'POST',
 			body: { email },
 			onSuccess: (res) => {
-				toast.success(res.message);
+				toast.success(res.message, {
+					icon: <FaCheckCircle className="text-white text-2xl" />,
+				});
 				setSubscribeSuccess(true);
 				setTimeout(() => setSubscribeSuccess(true), 3000);
 			},
@@ -79,7 +87,9 @@ const Footer = () => {
 	return (
 		<footer
 			className={` cta-section border-t-2 border-dotted border-t-grey flex flex-col w-full  text-darkGrey ${
-				linkname.startsWith('/admin') && 'hidden'
+				linkname.startsWith('/admin') || linkname.startsWith('/unsubscribe')
+					? 'hidden'
+					: ''
 			}`}
 		>
 			<div className="flex item   max-3xl:px-10 max-xs:px-5 max-lg:flex-col max-sm:px-5 justify-between items-center max-w-[1500px] mx-auto w-full">
@@ -131,24 +141,29 @@ const Footer = () => {
 								</p>
 							</div>
 						</div>
-						<div className="flex gap-2  w-full items-end justify-start relative">
-							<ClassicInput
-								value={email}
-								setValue={setEmail}
-								error={error}
-								setError={setError}
-								classname_override="  !self-start max-xs:!w-full "
-								errorContent={'Please enter a valid email address'}
-								placeholder="Your email"
-								aria-label="Email address for newsletter subscription"
-							/>
-							<AsyncButton
-								action="Subscribe"
-								classname_override="!w-[200px]"
-								loading={subscribing}
-								success={subscribeSuccess}
-								onClick={subscribe}
-							/>
+						<div className="flex gap-2  w-full flex-col">
+							<div className="flex gap-2  w-full items-end justify-start relative">
+								<ClassicInput
+									value={email}
+									setValue={setEmail}
+									error={error}
+									setError={setError}
+									classname_override="  !self-start max-xs:!w-full "
+									errorContent={'Please enter a valid email address'}
+									placeholder="Your email"
+									aria-label="Email address for newsletter subscription"
+									name="email"
+									readOnly={subscribeSuccess}
+								/>
+								<AsyncButton
+									action="Subscribe"
+									classname_override="!w-[200px]"
+									loading={subscribing}
+									success={subscribeSuccess}
+									onClick={subscribe}
+								/>
+							</div>
+							{error && <p className="text-sm text-red-300">{error}</p>}
 						</div>
 					</div>
 				</section>

@@ -26,11 +26,13 @@ type InputProps<T extends string | number> = {
 	onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
 	onChange?: React.ChangeEventHandler<HTMLInputElement>;
 	maxlength?: number;
+	readOnly?: boolean;
 };
 const ClassicInput = <T extends string | number>({
 	value,
 	error,
 	setValue,
+	readOnly = false,
 	setError,
 	errorContent,
 	maxlength,
@@ -79,9 +81,7 @@ const ClassicInput = <T extends string | number>({
 				<span
 					className={`text-[11px]  uppercase tracking-wide   ${
 						error && serverError?.includes(error) && 'text-red'
-					} ${
-						error === errorContent && !value ? 'text-red' : 'text-silver'
-					}`}
+					} ${error === errorContent && !value ? 'text-red' : 'text-silver'}`}
 				>
 					{label}
 				</span>
@@ -104,6 +104,7 @@ ${password && 'pr-8'}
 						name={name}
 						autoFocus={autofocus}
 						required={required}
+						readOnly={readOnly}
 						autoComplete={autocomplete}
 						onChange={(e) => {
 							setValue(e.target.value as T);
@@ -137,6 +138,7 @@ ${password && 'pr-8'}
 						value={value}
 						maxLength={maxlength ?? undefined}
 						required
+						readOnly={readOnly}
 						onChange={(e) => {
 							setValue(e.target.value as T);
 							setError?.('');
@@ -156,6 +158,4 @@ ${password && 'pr-8'}
 };
 
 export default ClassicInput;
-
-
 

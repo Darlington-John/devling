@@ -57,17 +57,17 @@ const Article = () => {
 								<img
 									src={article_data?.image}
 									alt={article_data?.title || 'article image'}
-									className="w-full  bg-[#ffffff] object-cover    max-md:max-h-auto max-md:rounded-sm"
+									className="w-full  bg-[#navy] object-cover    max-md:max-h-auto max-md:rounded-sm"
 								/>
 							</div>
-							<div className="flex items-start flex-col justify-between p-20 w-1/2 max-2xl:p-5 max-md:w-full    max-md:bg-white max-md:p-0 max-md:py-2 gap-1">
+							<div className="flex items-start flex-col justify-between p-20 w-1/2 max-2xl:p-5 max-md:w-full    max-md:bg-navy max-md:p-1 max-md:py-2 gap-1">
 								<button className="bg-blue hover:bg-darkBlue text-white text-lg max-dmd:text-sm h-[40px] px-2.5 duration-150 rounded-sm max-md:text-sm max-dmd:h-[30px] max-md:hidden">
 									{article_data?.category.title}
 								</button>
-								<h1 className="text-[32px] poppins-bold  text-white max-dmd:text-xl max-md:text-black max-md:text-lg ">
+								<h1 className="text-[32px] poppins-bold  text-white max-dmd:text-xl max-md:text-white max-md:text-lg ">
 									{article_data?.title}
 								</h1>
-								<h2 className="text-lg  text-white  max-md:text-black max-dmd:text-sm">
+								<h2 className="text-lg  text-white  max-md:text-silver max-dmd:text-sm">
 									{article_data?.description}
 								</h2>
 								<div className=" items-center gap-2 hidden md:flex">

@@ -70,7 +70,7 @@
 
 .tiptap li::before {
     content: "•";
-    color: hsl(215, 15%, 90%) ;
+    color: #d1d5dc ;
     /* custom bullet */
     margin-right: 0.5rem;
     font-size: larger
@@ -95,7 +95,7 @@
 .tiptap p {
     font-size: 16px;
     font-weight: 400;
-    color:  hsl(215, 15%, 90%) !important;
+    color:  #d1d5dc !important;
 }
 
 .tiptap h1 strong,
@@ -113,7 +113,7 @@
 .tiptap h5,
 .tiptap h6 {
    
-     color: #fff !important;
+     color: hsla(210.59 100% 90% / 0.95) !important;
 }
 strong {
     font-weight: 500 !important;
