@@ -14,6 +14,7 @@ import { CategoriesProvider } from './context/categories-context';
 import Script from 'next/script';
 import UpdateIp from './components/update-ip';
 import { Analytics } from '@vercel/analytics/next';
+import { Suspense } from 'react';
 const PoppinsReg = localFont({
 	src: './fonts/Poppins-Regular.ttf',
 	variable: '--font-poppins',
@@ -103,20 +104,22 @@ export default function RootLayout({
 				id="body"
 			>
 				<NextAuthProvider>
-					<ToastContainer position="bottom-right" closeButton={false} />
-					<UtilsProvider>
-						<CategoriesProvider>
-							<AuthProvider>
-								<UpdateIp />
-								<Header />
-								<Overlay />
-								<AuthPrompt />
-								{children}
-								<Analytics />
-								<Footer />
-							</AuthProvider>
-						</CategoriesProvider>
-					</UtilsProvider>
+					<Suspense>
+						<ToastContainer position="bottom-right" closeButton={false} />
+						<UtilsProvider>
+							<CategoriesProvider>
+								<AuthProvider>
+									<UpdateIp />
+									<Header />
+									<Overlay />
+									<AuthPrompt />
+									{children}
+									<Analytics />
+									<Footer />
+								</AuthProvider>
+							</CategoriesProvider>
+						</UtilsProvider>
+					</Suspense>
 				</NextAuthProvider>
 			</body>
 		</html>
