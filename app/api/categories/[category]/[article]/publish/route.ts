@@ -107,13 +107,7 @@ export async function PATCH(
                             alt="Devling Logo" width="200" style="display: block;" />
                     </td>
                 </tr>
-                <tr>
-                    <td align="left" style="padding-left: 30px; padding-top:10px;">
-                        <h2 style="font-size: 14px; color: #9cf; margin-bottom: 0px;">
-                            A new article just dropped!
-                        </h2>
-                    </td>
-                </tr>
+              
                 <tr>
                     <td align="center" style="padding: 20px;">
                         <img src="${
@@ -163,7 +157,7 @@ export async function PATCH(
 					...mailOptions,
 					to: sub.email,
 					from: process.env.EMAIL,
-					subject: 'A new article just dropped!',
+					subject: existingArticle?.title || 'A new article just dropped!',
 					html: htmlContent,
 				});
 			});
