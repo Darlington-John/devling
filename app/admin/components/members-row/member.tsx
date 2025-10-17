@@ -77,10 +77,10 @@ const Member = ({ member }: memberProps) => {
 						className={`text-xs px-2 rounded-sm
     ${
 			member?.role === 'super_admin'
-				? 'bg-[hsl(308,100%,97%)] text-[#783A71]' // Red
+				? 'text-[hsl(308,100%,97%)] bg-[#783A71]' // Red
 				: member?.role === 'admin'
-				? 'bg-[#FFFBDB] text-[#a37a00]' // Yellow
-				: 'bg-[#DBEAFE] text-[#2563EB]' // Blue (member)
+				? 'text-[#FFFBDB] bg-[#a37a00]' // Yellow
+				: 'text-[#DBEAFE] bg-[#2563EB]' // Blue (member)
 		}`}
 					>
 						{member?.role}
@@ -198,8 +198,4 @@ const Member = ({ member }: memberProps) => {
 };
 
 export default Member;
-
-
-
-
 

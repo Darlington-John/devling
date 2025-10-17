@@ -143,7 +143,7 @@ export async function PATCH(
                         </p>
                         <p style="font-size: 12px; color: #b7cad4; margin-top: 5px;">
                             <a href="${unsubscribeUrl}"
-                                style="color: hsl(1.74 64.49% 80.04%); text-decoration: underline;">Unsubscribe</a>
+                                style="color: #EDADAB; text-decoration: underline;">Unsubscribe</a>
                         </p>
                     </td>
                 </tr>
