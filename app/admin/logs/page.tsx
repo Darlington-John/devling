@@ -121,8 +121,8 @@ const Alerts = () => {
 							disabled={currentPage === 1}
 							className={`flex items-center justify-center h-7 w-7 rounded-md ${
 								currentPage === 1
-									? 'bg-white text-gray-700 opacity-40'
-									: 'bg-white text-black hover:bg-gray-200'
+									? 'bg-deepBlue text-silver opacity-40 !cursor-default'
+									: 'bg-deepBlue text-silver hover:ring ring-fade-blue'
 							}`}
 						>
 							<MdKeyboardArrowLeft />
@@ -151,7 +151,7 @@ const Alerts = () => {
 
 							return pages.map((page, idx) =>
 								page === '...' ? (
-									<span key={`dots-${idx}`} className="px-2">
+									<span key={`dots-${idx}`} className="px-2 text-silver">
 										…
 									</span>
 								) : (
@@ -162,8 +162,8 @@ const Alerts = () => {
 										}}
 										className={`px-3 py-1 rounded-md  ${
 											page === currentPage
-												? 'bg-white text-black'
-												: ' text-gray-600 hover:text-black'
+												? 'bg-blue text-white'
+												: 'text-silver hover:bg-grey'
 										}`}
 									>
 										{page}
@@ -180,8 +180,8 @@ const Alerts = () => {
 							disabled={currentPage === totalPages}
 							className={`flex items-center justify-center h-7 w-7 rounded-md  ${
 								currentPage === totalPages
-									? 'bg-white text-gray-700 opacity-60'
-									: 'bg-white text-black hover:bg-gray-200'
+									? 'bg-deepBlue text-silver opacity-40 !cursor-default'
+									: 'bg-deepBlue text-silver hover:ring ring-fade-blue'
 							}`}
 						>
 							<MdKeyboardArrowRight />

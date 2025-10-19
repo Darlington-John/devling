@@ -79,7 +79,7 @@ const Members = () => {
 								className={`flex items-center justify-center h-7 w-7 rounded-md ${
 									currentPage === 1
 										? 'bg-deepBlue text-silver opacity-40 !cursor-default'
-										: 'bg-deepBlue text-silver hover:bg-gray-200'
+										: 'bg-deepBlue text-silver  hover:ring ring-fade-blue'
 								}`}
 							>
 								<MdKeyboardArrowLeft />
@@ -144,7 +144,7 @@ const Members = () => {
 								className={`flex items-center justify-center h-7 w-7 rounded-md  ${
 									currentPage === totalPages
 										? 'bg-deepBlue text-silver opacity-40 !cursor-default'
-										: 'bg-deepBlue text-silver hover:bg-gray-200'
+										: 'bg-deepBlue text-silver hover:ring ring-silver'
 								}`}
 							>
 								<MdKeyboardArrowRight />
@@ -160,6 +160,4 @@ const Members = () => {
 };
 
 export default Members;
-
-
 
