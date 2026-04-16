@@ -175,6 +175,7 @@ const EditArticlePrompt = ({
 							label="Title"
 							name="title"
 							errorContent="Title is required"
+							textarea
 						/>
 						<ClassicInput
 							value={desc}
